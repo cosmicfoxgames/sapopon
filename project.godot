@@ -11,12 +11,15 @@ config_version=5
 [application]
 
 config/name="sapopon"
+run/main_scene="res://scenes/game_master.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameData="*res://scripts/game_data.gd"
+PlayerData="*res://scripts/player_data.gd"
+GlobalSignals="*res://scripts/global_signals.gd"
 
 [display]
 
@@ -25,7 +28,6 @@ window/size/viewport_height=198
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
 
 [rendering]
 

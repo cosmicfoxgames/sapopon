@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://pvg0w1f6cv0v"]
+[gd_scene load_steps=3 format=3 uid="uid://pvg0w1f6cv0v"]
+
+[ext_resource type="Script" path="res://scenes/gacha_master.gd" id="1_n2buy"]
+[ext_resource type="PackedScene" uid="uid://c072uq7qbyse6" path="res://scene objects/upper_ui_gacha.tscn" id="2_3osyx"]
 
 [node name="gacha_master" type="Control"]
 layout_mode = 3
@@ -7,38 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n2buy")
 
-[node name="upper_ui" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="upper_ui_gacha" parent="." instance=ExtResource("2_3osyx")]
+unique_name_in_owner = true
 
-[node name="Label" type="Label" parent="upper_ui"]
-layout_mode = 0
-offset_right = 62.0
-offset_bottom = 23.0
-text = "moedas"
-
-[node name="Label2" type="Label" parent="upper_ui"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 21.0
-offset_right = 63.0
-offset_bottom = 44.0
-text = "dia"
-
-[node name="Button" type="Button" parent="upper_ui"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 125.0
-offset_right = 259.0
-offset_bottom = 179.0
-text = "gacha!"
-
-[node name="Button2" type="Button" parent="upper_ui"]
-layout_mode = 0
-offset_left = 267.0
-offset_top = 6.0
-offset_right = 342.0
-offset_bottom = 37.0
-text = "next day"
+[connection signal="spin_gacha_signal" from="upper_ui_gacha" to="." method="_on_upper_ui_gacha_spin_gacha_signal"]
