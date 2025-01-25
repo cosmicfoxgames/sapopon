@@ -7,4 +7,6 @@ enum RARITY {COMMOM, INCOMMOM, RARE, UNIQUE}
 @export var colection : GameData.FROG_COLECTIONS
 @export var frog_rarity : RARITY
 
-var value = frog_rarity * frog_rarity
+
+func get_value():
+	return(frog_rarity * frog_rarity)

@@ -44,3 +44,11 @@ func _on_button_button_down() -> void:
 
 func _on_print_to_console(txt):
 	print_to_console(txt)
+
+#botão ir pro mercado
+func _on_button_4_button_down() -> void:
+	GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.MARKET]))
+
+#botão ir pra coleção
+func _on_button_3_button_down() -> void:
+	GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.COLLECTION]))

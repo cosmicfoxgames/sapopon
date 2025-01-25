@@ -6,6 +6,9 @@ var current_money  = 0
 var current_collection = []
 var currnt_day = 1
 
+var today_market_fluctuation
+var current_collection_value : int
+
 func withdraw_money(ammt):
 	if (current_money - ammt) >= 0: current_money -= ammt
 	else:

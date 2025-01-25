@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://ehbnkl7hl4t7"]
+
+[ext_resource type="Script" path="res://scene objects/upper_ui_collection.gd" id="1_mraka"]
+
+[node name="upper_ui_collection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mraka")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 29.0
+offset_right = 46.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 10
+text = "coleção"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 8.0
+offset_right = 345.0
+offset_bottom = 39.0
+text = "voltar"
+
+[node name="Label2" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 24.0
+text = "valor da colecao"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
