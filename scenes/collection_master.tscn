@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx48mcpo7mrfj"]
+
+[ext_resource type="PackedScene" uid="uid://ehbnkl7hl4t7" path="res://scene objects/upper_ui_collection.tscn" id="1_u4d0r"]
+[ext_resource type="Script" path="res://scenes/collection_master.gd" id="1_wqs75"]
+
+[node name="collection_master" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqs75")
+
+[node name="upper_ui_collection" parent="." instance=ExtResource("1_u4d0r")]
+unique_name_in_owner = true

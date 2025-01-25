@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://k858m361uqrm"]
+
+[ext_resource type="Script" path="res://scenes/game_master.gd" id="1_1hcoi"]
+[ext_resource type="Script" path="res://scenes/sfx_handler.gd" id="2_866cm"]
+
+[node name="game_master" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1hcoi")
+
+[node name="all_scenes_here" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[node name="sfx_handler" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_866cm")
+
+[node name="sfx1" type="AudioStreamPlayer2D" parent="sfx_handler"]
+unique_name_in_owner = true
+
+[node name="sfx2" type="AudioStreamPlayer2D" parent="sfx_handler"]
+unique_name_in_owner = true
+
+[node name="sfx3" type="AudioStreamPlayer2D" parent="sfx_handler"]
+unique_name_in_owner = true

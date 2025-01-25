@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="sapopon"
+run/main_scene="res://scenes/game_master.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameData="*res://scripts/game_data.gd"
+PlayerData="*res://scripts/player_data.gd"
+GlobalSignals="*res://scripts/global_signals.gd"
+CFGCommonLibrary="*res://scripts/cfg_common_library.gd"
+GameResources="*res://scripts/game_resources.gd"
+
+[display]
+
+window/size/viewport_width=352
+window/size/viewport_height=198
+window/size/window_width_override=864
+window/size/window_height_override=486
+window/stretch/mode="viewport"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
