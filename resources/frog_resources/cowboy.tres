@@ -6,4 +6,4 @@
 script = ExtResource("1_ogbbl")
 id = "cowboy"
 colection = 1
-frog_rarity = 1
+frog_rarity = 0

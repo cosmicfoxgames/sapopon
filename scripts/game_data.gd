@@ -77,30 +77,40 @@ func set_market_fluctuation_for_today():
 
 func get_collection_value():
 	print("veio pro get_collection_value")
+	print(PlayerData.today_market_fluctuation)
+	print(PlayerData.current_collection)
 	var valor = 0
 	
 	for i in PlayerData.current_collection:
 		var frog = load(GameData.FROG_TEMPLATE_PATH % i)
-		if PlayerData.today_market_fluctuation[0].has(i):
-			#coleção do sapo é uma flutuiação positiva
-			if PlayerData.today_market_fluctuation[2].has(i):
-				#coleção é uma super influencia
+		print("sapo é: " + i + ", com valor de: " + str(frog.get_value()))
+		print(frog.colection)
+		
+		#coleção do sapo é uma flutuiação positiva
+		if PlayerData.today_market_fluctuation[0].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
+			#coleção é uma super influencia
+			if PlayerData.today_market_fluctuation[2].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
+				print("sapo é super flutuação positiva")
 				valor += frog.get_value() * 8
+			#coleção não é uma super influencia
 			else:
-				#coleção não é uma super influencia
+				print("sapo é flutuação positiva")
 				valor += frog.get_value() * 2
 		
-		elif PlayerData.today_market_fluctuation[1].has(i):
-			#coleção do sapo é uma flutuiação negativa
-			if PlayerData.today_market_fluctuation[2].has(i):
-				#coleção é uma super influencia
+		#coleção do sapo é uma flutuiação negativa
+		elif PlayerData.today_market_fluctuation[1].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
+			#coleção é uma super influencia
+			if PlayerData.today_market_fluctuation[2].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
+				print("sapo é super flutuação negativa")
 				valor += frog.get_value() * -8
+			#coleção não é uma super influencia
 			else:
-				#coleção não é uma super influencia
+				print("sapo é flutuação negativa")
 				valor += frog.get_value() * -2
 		
+		#coleção não tá nas flutuações de hj
 		else:
-			#coleção não tá nas flutuações de hj
+			print("sapo não tá em flutuação")
 			valor += frog.get_value()
 	
 	PlayerData.current_collection_value = valor

@@ -52,3 +52,7 @@ func _on_button_4_button_down() -> void:
 #botão ir pra coleção
 func _on_button_3_button_down() -> void:
 	GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.COLLECTION]))
+
+#botão ir para proximo dia
+func _on_button_2_button_down() -> void:
+	GlobalSignals.advance_day.emit()

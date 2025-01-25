@@ -9,4 +9,4 @@ enum RARITY {COMMOM, INCOMMOM, RARE, UNIQUE}
 
 
 func get_value():
-	return(frog_rarity * frog_rarity)
+	return((frog_rarity + 1) * (frog_rarity + 1))
