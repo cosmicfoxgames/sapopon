@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_1hcoi")
 
 [node name="all_scenes_here" type="Control" parent="."]
@@ -17,6 +18,7 @@ unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true

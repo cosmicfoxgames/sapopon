@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://02bdy1l2b0ae"]
+
+[ext_resource type="FontFile" uid="uid://cxayvq8ng6bm3" path="res://resources/fonts/Exogenik.ttf" id="1_hb3pf"]
+
+[resource]
+base_font = ExtResource("1_hb3pf")

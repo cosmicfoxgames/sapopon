@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c072uq7qbyse6"]
+[gd_scene load_steps=3 format=3 uid="uid://c072uq7qbyse6"]
 
 [ext_resource type="Script" path="res://scene objects/upper_ui_gacha.gd" id="1_kdprm"]
+[ext_resource type="PackedScene" uid="uid://bx72p4yq4sgjq" path="res://scene objects/button_w_label.tscn" id="2_tffil"]
 
 [node name="upper_ui_gacha" type="Control"]
 layout_mode = 3
@@ -42,6 +43,7 @@ offset_bottom = 37.0
 text = "next day"
 
 [node name="Button3" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 9.0
 offset_top = 150.0
@@ -50,6 +52,7 @@ offset_bottom = 181.0
 text = "coleção"
 
 [node name="Button4" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 4.0
 offset_top = 115.0
@@ -66,6 +69,24 @@ offset_right = 343.0
 offset_bottom = 117.0
 theme_override_font_sizes/font_size = 13
 autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 77.0
+offset_right = 71.0
+offset_bottom = 153.0
+theme_override_constants/separation = 55
+alignment = 2
+metadata/_edit_group_ = true
+
+[node name="button_w_label" parent="VBoxContainer" instance=ExtResource("2_tffil")]
+layout_mode = 2
+label = "collection"
+
+[node name="button_w_label2" parent="VBoxContainer" instance=ExtResource("2_tffil")]
+layout_mode = 2
+label = "market"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]

@@ -52,10 +52,10 @@ func get_default_save_game():
 	print("veio pro get_degault_save_game")
 	save = {
 		"version" : GameData.full_version,
-		"current_money" : 10,
+		"current_money" : 0,
 		"collection" : [],
 		"curr_day" : 1,
-		"today_market_fluctuation" : null
+		"today_market_fluctuation" : []
 	}
 	
 	update_with_loaded_game()

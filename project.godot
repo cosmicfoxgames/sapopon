@@ -23,6 +23,7 @@ GlobalSignals="*res://scripts/global_signals.gd"
 CFGCommonLibrary="*res://scripts/cfg_common_library.gd"
 GameResources="*res://scripts/game_resources.gd"
 Save="*res://scripts/save.gd"
+ButtonActions="*res://scripts/button_actions.gd"
 
 [display]
 
@@ -31,6 +32,14 @@ window/size/viewport_height=198
 window/size/window_width_override=864
 window/size/window_height_override=486
 window/stretch/mode="viewport"
+
+[input]
+
+game_click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 

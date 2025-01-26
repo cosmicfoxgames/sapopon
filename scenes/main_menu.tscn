@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cocpsaisvyjp8"]
+[gd_scene load_steps=3 format=3 uid="uid://cocpsaisvyjp8"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_xmmsf"]
+[ext_resource type="PackedScene" uid="uid://bx72p4yq4sgjq" path="res://scene objects/button_w_label.tscn" id="2_3dbpb"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -9,14 +10,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_xmmsf")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 116.0
-offset_top = 74.0
-offset_right = 228.0
-offset_bottom = 105.0
+offset_left = 124.0
+offset_top = 140.0
+offset_right = 236.0
+offset_bottom = 171.0
+mouse_filter = 1
 text = "começar jogo"
+
+[node name="button_w_label" parent="." instance=ExtResource("2_3dbpb")]
+offset_left = 182.0
+offset_top = 84.0
+offset_right = 198.0
+offset_bottom = 100.0
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
