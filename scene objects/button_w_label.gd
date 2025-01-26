@@ -1,5 +1,7 @@
 extends Control
 
+signal clicked(which)
+
 @onready var anim = %AnimationPlayer
 @onready var show_label = %Label
 @onready var show_icon = %Icon
@@ -23,7 +25,8 @@ func set_button():
 	if icon != null: show_icon.texture = icon
 
 func on_click():
-	ButtonActions.clicked_on_button(label)
+	clicked.emit(label)
+	#ButtonActions.clicked_on_button(label)
 
 #signals
 

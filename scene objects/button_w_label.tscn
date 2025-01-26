@@ -1,16 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bx72p4yq4sgjq"]
+[gd_scene load_steps=11 format=3 uid="uid://bx72p4yq4sgjq"]
 
 [ext_resource type="Script" path="res://scene objects/button_w_label.gd" id="1_wucku"]
-[ext_resource type="Texture2D" uid="uid://36y3ou5ueogq" path="res://icon.svg" id="2_xllv2"]
-[ext_resource type="FontVariation" uid="uid://02bdy1l2b0ae" path="res://resources/fonts/teh_ui_font.tres" id="3_rxb8y"]
+[ext_resource type="Texture2D" uid="uid://pjruikvqf6tc" path="res://resources/graphics/icons/Mini gacha.png" id="2_wh5uw"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="3_ets0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xps0d"]
 size = Vector2(32, 32)
-
-[sub_resource type="Theme" id="Theme_tph38"]
-Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 10
-Label/fonts/font = ExtResource("3_rxb8y")
 
 [sub_resource type="Animation" id="Animation_4kyoc"]
 length = 0.001
@@ -238,8 +233,7 @@ unique_name_in_owner = true
 
 [node name="Icon" type="Sprite2D" parent="icon"]
 unique_name_in_owner = true
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_xllv2")
+texture = ExtResource("2_wh5uw")
 
 [node name="Area2D" type="Area2D" parent="icon"]
 
@@ -269,7 +263,7 @@ layout_mode = 0
 offset_right = 56.0
 offset_bottom = 11.0
 mouse_filter = 1
-theme = SubResource("Theme_tph38")
+theme = ExtResource("3_ets0w")
 text = "buttonB"
 horizontal_alignment = 1
 vertical_alignment = 1

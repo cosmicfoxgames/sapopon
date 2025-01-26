@@ -41,6 +41,7 @@ func load_game():
 func get_save():
 	print("veio pro get_save")
 	save = {
+		"first_time" : GameData.is_firt_time,
 		"version" : GameData.full_version,
 		"current_money" : PlayerData.current_money,
 		"collection" : PlayerData.current_collection,
@@ -51,6 +52,7 @@ func get_save():
 func get_default_save_game():
 	print("veio pro get_degault_save_game")
 	save = {
+		"first_time" : true,
 		"version" : GameData.full_version,
 		"current_money" : 0,
 		"collection" : [],
@@ -63,6 +65,7 @@ func get_default_save_game():
 func update_with_loaded_game():
 	print("veio pro update with loaded game")
 	print(save)
+	GameData.is_firt_time = save["first_time"]
 	PlayerData.current_money = save["current_money"]
 	PlayerData.current_collection = save["collection"]
 	PlayerData.currnt_day = save["curr_day"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfmpw70fvro5n"]
+
+[ext_resource type="Texture2D" uid="uid://bx86ysutjgs7o" path="res://resources/graphics/logo/TITLE.PNG" id="1_1n4iv"]
+[ext_resource type="Script" path="res://scene objects/start_game.gd" id="1_5pdfy"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="2_n264f"]
+
+[sub_resource type="Animation" id="Animation_mwkq1"]
+resource_name = "title_in"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.301961), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pjlhw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7a481"]
+_data = {
+"RESET": SubResource("Animation_pjlhw"),
+"title_in": SubResource("Animation_mwkq1")
+}
+
+[node name="start_game" type="Node2D"]
+script = ExtResource("1_5pdfy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 371.0
+offset_bottom = 211.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 124.0
+offset_top = 130.0
+offset_right = 227.0
+offset_bottom = 153.0
+theme = ExtResource("2_n264f")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "press to start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 352.0
+offset_bottom = 137.0
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="Sprite2D" parent="CenterContainer/Control"]
+texture = ExtResource("1_1n4iv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_7a481")
+}

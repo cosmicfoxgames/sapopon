@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c072uq7qbyse6"]
 
 [ext_resource type="Script" path="res://scene objects/upper_ui_gacha.gd" id="1_kdprm"]
-[ext_resource type="Texture2D" uid="uid://lexdl0li1wfu" path="res://resources/placeholders/screen.png" id="2_gxwfs"]
-[ext_resource type="PackedScene" uid="uid://bx72p4yq4sgjq" path="res://scene objects/button_w_label.tscn" id="2_tffil"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="2_g7kr1"]
+[ext_resource type="PackedScene" uid="uid://bgg5woyjyfmwy" path="res://scene objects/gacha.tscn" id="2_upaw2"]
 
 [node name="upper_ui_gacha" type="Control"]
 layout_mode = 3
@@ -10,22 +10,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_kdprm")
-metadata/_edit_vertical_guides_ = [21.0]
-
-[node name="Screen" type="Sprite2D" parent="."]
-position = Vector2(176, 99)
-texture = ExtResource("2_gxwfs")
+metadata/_edit_vertical_guides_ = [290.0]
 
 [node name="label_moedas" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -2.0
-offset_right = 60.0
-offset_bottom = 23.0
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 77.0
+offset_bottom = 37.0
+theme = ExtResource("2_g7kr1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "moedas"
 
 [node name="label_dias" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = 21.0
@@ -33,69 +33,6 @@ offset_right = 63.0
 offset_bottom = 44.0
 text = "dia"
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 138.0
-offset_top = 103.0
-offset_right = 297.0
-offset_bottom = 157.0
-text = "gacha!"
-
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 266.0
-offset_top = 41.0
-offset_right = 341.0
-offset_bottom = 72.0
-text = "next day"
-
-[node name="Button3" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 9.0
-offset_top = 150.0
-offset_right = 76.0
-offset_bottom = 181.0
-text = "coleção"
-
-[node name="Button4" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 4.0
-offset_top = 115.0
-offset_right = 81.0
-offset_bottom = 146.0
-text = "mercado"
-
-[node name="console" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 89.0
-offset_top = 45.0
-offset_right = 343.0
-offset_bottom = 117.0
-theme_override_font_sizes/font_size = 13
-autowrap_mode = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 57.0
-offset_right = 65.0
-offset_bottom = 133.0
-theme_override_constants/separation = 55
-alignment = 2
-metadata/_edit_group_ = true
-
-[node name="button_w_label" parent="VBoxContainer" instance=ExtResource("2_tffil")]
-layout_mode = 2
-label = "collection"
-
-[node name="button_w_label2" parent="VBoxContainer" instance=ExtResource("2_tffil")]
-layout_mode = 2
-label = "market"
-
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
-[connection signal="button_down" from="Button3" to="." method="_on_button_3_button_down"]
-[connection signal="button_down" from="Button4" to="." method="_on_button_4_button_down"]
+[node name="gacha" parent="." instance=ExtResource("2_upaw2")]
+position = Vector2(220, 98)
+scale = Vector2(0.9, 0.9)

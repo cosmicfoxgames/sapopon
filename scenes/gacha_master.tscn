@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/gacha_master.gd" id="1_n2buy"]
 [ext_resource type="PackedScene" uid="uid://c072uq7qbyse6" path="res://scene objects/upper_ui_gacha.tscn" id="2_3osyx"]
-[ext_resource type="Texture2D" uid="uid://lexdl0li1wfu" path="res://resources/placeholders/screen.png" id="2_txkrd"]
+[ext_resource type="Texture2D" uid="uid://bb011tc5j1vjs" path="res://resources/graphics/windows/gacha.PNG" id="2_mh3jo"]
 
 [node name="gacha_master" type="Control"]
 layout_mode = 3
@@ -13,9 +13,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n2buy")
 
-[node name="Screen" type="Sprite2D" parent="."]
-position = Vector2(176, 99)
-texture = ExtResource("2_txkrd")
+[node name="Gacha" type="Sprite2D" parent="."]
+position = Vector2(176, 93)
+texture = ExtResource("2_mh3jo")
 
 [node name="upper_ui_gacha" parent="." instance=ExtResource("2_3osyx")]
 unique_name_in_owner = true

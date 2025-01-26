@@ -6,9 +6,10 @@ extends Control
 @onready var music_player = %music
 
 func _ready() -> void:
-	handle_changing_scene(load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]))
-	conect_all_signals()
 	Save.load_game()
+	handle_changing_scene(load(GameData.scene_paths[GameData.SCENES.INTRO]))
+	conect_all_signals()
+
 
 func _process(delta: float) -> void:
 	pass

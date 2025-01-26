@@ -5,19 +5,23 @@ var full_version = [0, 0, 0]
 enum FROG_COLECTIONS {GOTHIC, WILD_WEST, SILLY, SHAPES_N_COLORS, REALISTIC, GAY}
 enum MARKET_FLUCTUATIONS {NEGATIVE, NEUTRAL, POSITIVE}
 
-enum SCENES {GACHA_ROOM, MAIN_MENU, MARKET, COLLECTION}
+enum SCENES {GACHA_ROOM, MAIN_MENU, MARKET, COLLECTION, DESKTOP, INTRO}
 
 const scene_paths = [
 	"res://scenes/gacha_master.tscn",
 	"res://scenes/main_menu.tscn",
 	"res://scenes/market_master.tscn",
-	"res://scenes/collection_master.tscn"
+	"res://scenes/collection_master.tscn",
+	"res://scenes/desktop_master.tscn",
+	"res://scenes/intro_master.tscn"
 ]
 
 const FROG_TEMPLATE_PATH = "res://resources/frog_resources/%s.tres"
-const FROG_LIST = ["cowboy", "gotico", "palhaco"]
+const FROG_LIST = ["cowboy", "gotico", "palhaco", ]
 
 const DEFAUT_START_PLAYER_MONEY = 10
+
+var is_firt_time = true
 
 func get_all_frog_templates():
 	var all_frogs = []
@@ -118,9 +122,9 @@ func get_collection_value():
 	PlayerData.current_collection_value = valor
 
 func start_fresh_game():
+	set_market_fluctuation_for_today()
 	PlayerData.current_money = DEFAUT_START_PLAYER_MONEY
 	PlayerData.currnt_day = 1
 	PlayerData.current_collection = []
 	
-	#tirar depois
-	set_market_fluctuation_for_today()
+	GameData.is_firt_time = false

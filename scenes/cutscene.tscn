@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1eg1cby55jvd"]
+
+[ext_resource type="Texture2D" uid="uid://dav4j13r4h00w" path="res://resources/graphics/intro/CUTSCENE0.PNG" id="1_ca65c"]
+[ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_tqmnr"]
+[ext_resource type="Texture2D" uid="uid://cb50h42mokp43" path="res://resources/graphics/intro/CUTSCENE1.PNG" id="2_ro4b1"]
+[ext_resource type="Texture2D" uid="uid://6kslryeamhqv" path="res://resources/graphics/intro/CUTSCENE2.PNG" id="3_4tk6p"]
+[ext_resource type="Texture2D" uid="uid://o48eaq5gvbnr" path="res://resources/graphics/intro/CUTSCENE3.PNG" id="4_i7ees"]
+[ext_resource type="Texture2D" uid="uid://bij3r81y37ewc" path="res://resources/graphics/intro/CUTSCENE4.PNG" id="5_e2hjr"]
+
+[sub_resource type="Animation" id="Animation_hvds7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene0:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ca65c")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wme1y"]
+resource_name = "new_animation"
+length = 33.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene0:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6, 12, 18, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_ca65c"), ExtResource("2_ro4b1"), ExtResource("3_4tk6p"), ExtResource("4_i7ees"), ExtResource("5_e2hjr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5, 5.25, 6, 6.75, 7.5, 11.25, 12, 12.75, 13.5, 17.25, 18, 18.75, 19.5, 23.25, 24, 24.75, 25.5, 30, 31.1, 32.1333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 0), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 1), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 0), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 1), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 0), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 1), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 0), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 1), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0.890196), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m5jcl"]
+_data = {
+"RESET": SubResource("Animation_hvds7"),
+"new_animation": SubResource("Animation_wme1y")
+}
+
+[node name="cutscene" type="Node2D"]
+script = ExtResource("1_tqmnr")
+
+[node name="Animation Handler" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation Handler"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_m5jcl")
+}
+
+[node name="Cutscene0" type="Sprite2D" parent="Animation Handler"]
+position = Vector2(176, 99)
+texture = ExtResource("1_ca65c")
+
+[node name="ColorRect" type="ColorRect" parent="Animation Handler"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

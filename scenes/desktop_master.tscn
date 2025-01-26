@@ -1,0 +1,190 @@
+[gd_scene load_steps=14 format=3 uid="uid://c5q0dvdeuoo1q"]
+
+[ext_resource type="Texture2D" uid="uid://bokj66ceagg1b" path="res://resources/graphics/ui/start_body.PNG" id="1_14meq"]
+[ext_resource type="Script" path="res://scenes/desktop_master.gd" id="1_vxdqc"]
+[ext_resource type="PackedScene" uid="uid://pvg0w1f6cv0v" path="res://scenes/gacha_master.tscn" id="1_y7env"]
+[ext_resource type="Texture2D" uid="uid://c8dfvpgexabxk" path="res://resources/graphics/ui/barra.PNG" id="2_j7xjx"]
+[ext_resource type="Texture2D" uid="uid://bet6pqxefx8qo" path="res://resources/graphics/ui/start_head.PNG" id="2_msfkr"]
+[ext_resource type="PackedScene" uid="uid://bx72p4yq4sgjq" path="res://scene objects/button_w_label.tscn" id="3_6rynu"]
+[ext_resource type="Texture2D" uid="uid://pjruikvqf6tc" path="res://resources/graphics/icons/Mini gacha.png" id="5_j5soa"]
+[ext_resource type="Texture2D" uid="uid://cr3wi2oevbyy4" path="res://resources/graphics/icons/Pasta sapo.png" id="6_08typ"]
+[ext_resource type="Texture2D" uid="uid://c2uxlt1qdpdt7" path="res://resources/graphics/icons/Stonks.png" id="7_lrdsq"]
+
+[sub_resource type="Animation" id="Animation_02b60"]
+resource_name = "window_in"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("all_scenes_here:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(6, -127), Vector2(69, 13), Vector2(59, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("all_scenes_here:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.11, 0.11), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bre8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("all_scenes_here:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("all_scenes_here:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a161b"]
+resource_name = "window_out"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("all_scenes_here:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.21541e-08, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(59, 3), Vector2(69, 13), Vector2(6, -127)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("all_scenes_here:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-7.45058e-09, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(0.11, 0.11)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y7tec"]
+_data = {
+"RESET": SubResource("Animation_bre8d"),
+"window_in": SubResource("Animation_02b60"),
+"window_out": SubResource("Animation_a161b")
+}
+
+[node name="desktop_master" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_vxdqc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 371.0
+offset_bottom = 205.0
+mouse_filter = 1
+color = Color(1, 0.717647, 0.862745, 1)
+
+[node name="all_scenes_here" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+offset_left = 59.0
+offset_top = 3.0
+offset_right = 59.0
+offset_bottom = 3.0
+pivot_offset = Vector2(0, 352)
+mouse_filter = 1
+metadata/_edit_group_ = true
+
+[node name="gacha_master" parent="all_scenes_here" instance=ExtResource("1_y7env")]
+layout_mode = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -24)
+
+[node name="StartBody" type="Sprite2D" parent="Node2D"]
+position = Vector2(27, 144)
+scale = Vector2(1, 5)
+texture = ExtResource("1_14meq")
+
+[node name="Startwide2" type="Sprite2D" parent="Node2D"]
+position = Vector2(27, 50)
+texture = ExtResource("2_msfkr")
+
+[node name="Barra" type="Sprite2D" parent="."]
+position = Vector2(176, 192)
+texture = ExtResource("2_j7xjx")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 50.0
+offset_bottom = 175.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+alignment = 2
+metadata/_edit_group_ = true
+
+[node name="button_gacha" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_6rynu")]
+layout_mode = 2
+label = "gacha"
+icon = ExtResource("5_j5soa")
+
+[node name="button_collection" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_6rynu")]
+layout_mode = 2
+label = "collection"
+icon = ExtResource("6_08typ")
+
+[node name="button_market" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_6rynu")]
+layout_mode = 2
+label = "market"
+icon = ExtResource("7_lrdsq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_y7tec")
+}
+
+[connection signal="clicked" from="CenterContainer/VBoxContainer/button_gacha" to="." method="_on_button_gacha_clicked"]
+[connection signal="clicked" from="CenterContainer/VBoxContainer/button_collection" to="." method="_on_button_collection_clicked"]
+[connection signal="clicked" from="CenterContainer/VBoxContainer/button_market" to="." method="_on_button_market_clicked"]

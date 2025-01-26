@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgg5woyjyfmwy"]
+
+[ext_resource type="Texture2D" uid="uid://betjxpsofc3i6" path="res://resources/graphics/gacha/GACHABACK.PNG" id="1_eyycu"]
+[ext_resource type="Texture2D" uid="uid://dnedl5y2ueplo" path="res://resources/graphics/gacha/GACHAFRONT.PNG" id="1_lpaf7"]
+[ext_resource type="Texture2D" uid="uid://baihgicbqykr5" path="res://resources/graphics/gacha/BOLAS.PNG" id="2_cgk8g"]
+[ext_resource type="Texture2D" uid="uid://ck2g60qy0eoe5" path="res://resources/graphics/gacha/GACHALAVANCA.PNG" id="4_7yyqh"]
+
+[node name="gacha" type="Node2D"]
+
+[node name="Gachaback" type="Sprite2D" parent="."]
+texture = ExtResource("1_eyycu")
+
+[node name="Bolas" type="Sprite2D" parent="."]
+texture = ExtResource("2_cgk8g")
+
+[node name="Gachafront" type="Sprite2D" parent="."]
+texture = ExtResource("1_lpaf7")
+
+[node name="Gachalavanca" type="Sprite2D" parent="."]
+texture = ExtResource("4_7yyqh")

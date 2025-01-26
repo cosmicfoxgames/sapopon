@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bascc1vb042uq"]
+
+[ext_resource type="FontVariation" uid="uid://02bdy1l2b0ae" path="res://resources/fonts/teh_ui_font.tres" id="1_cdg6v"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 10
+Label/fonts/font = ExtResource("1_cdg6v")

@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1bcninaprcnx"]
+
+[ext_resource type="Script" path="res://intro_master.gd" id="1_xb1p5"]
+[ext_resource type="PackedScene" uid="uid://b1eg1cby55jvd" path="res://scenes/cutscene.tscn" id="2_4ffyh"]
+[ext_resource type="PackedScene" uid="uid://bfmpw70fvro5n" path="res://scene objects/start_game.tscn" id="2_gsyq7"]
+[ext_resource type="Texture2D" uid="uid://b7j7msmam2okt" path="res://resources/graphics/intro/CFSPLASH.PNG" id="3_44tvk"]
+[ext_resource type="Texture2D" uid="uid://dg2bkpy6p6hb5" path="res://resources/graphics/intro/VESPLASH.PNG" id="4_lpn07"]
+
+[sub_resource type="Animation" id="Animation_mqu85"]
+resource_name = "splash"
+length = 3.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("splash:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_44tvk"), ExtResource("3_44tvk"), ExtResource("4_lpn07")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("splash:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5, 1.5, 1.7, 1.9, 2.1, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.301961), Color(1, 1, 1, 1), Color(1, 1, 1, 0.301961), Color(1, 1, 1, 0), Color(1, 1, 1, 0.301961), Color(1, 1, 1, 1), Color(1, 1, 1, 0.301961), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sxkej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("splash:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_44tvk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("splash:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gdvnx"]
+_data = {
+"RESET": SubResource("Animation_sxkej"),
+"splash": SubResource("Animation_mqu85")
+}
+
+[node name="intro_master" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xb1p5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 360.0
+offset_bottom = 204.0
+color = Color(0, 0, 0, 1)
+
+[node name="start_game" parent="." instance=ExtResource("2_gsyq7")]
+unique_name_in_owner = true
+visible = false
+
+[node name="cutscene" parent="." instance=ExtResource("2_4ffyh")]
+unique_name_in_owner = true
+visible = false
+
+[node name="splash" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(176, 99)
+texture = ExtResource("3_44tvk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_gdvnx")
+}
+
+[connection signal="finished_title_animation_in" from="start_game" to="." method="_on_start_game_finished_title_animation_in"]
