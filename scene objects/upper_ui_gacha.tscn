@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c072uq7qbyse6"]
+[gd_scene load_steps=4 format=3 uid="uid://c072uq7qbyse6"]
 
 [ext_resource type="Script" path="res://scene objects/upper_ui_gacha.gd" id="1_kdprm"]
+[ext_resource type="Texture2D" uid="uid://lexdl0li1wfu" path="res://resources/placeholders/screen.png" id="2_gxwfs"]
 [ext_resource type="PackedScene" uid="uid://bx72p4yq4sgjq" path="res://scene objects/button_w_label.tscn" id="2_tffil"]
 
 [node name="upper_ui_gacha" type="Control"]
@@ -9,11 +10,17 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_kdprm")
+metadata/_edit_vertical_guides_ = [21.0]
+
+[node name="Screen" type="Sprite2D" parent="."]
+position = Vector2(176, 99)
+texture = ExtResource("2_gxwfs")
 
 [node name="label_moedas" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 62.0
+offset_left = -2.0
+offset_right = 60.0
 offset_bottom = 23.0
 text = "moedas"
 
@@ -28,18 +35,18 @@ text = "dia"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 135.0
-offset_top = 124.0
-offset_right = 294.0
-offset_bottom = 178.0
+offset_left = 138.0
+offset_top = 103.0
+offset_right = 297.0
+offset_bottom = 157.0
 text = "gacha!"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 267.0
-offset_top = 6.0
-offset_right = 342.0
-offset_bottom = 37.0
+offset_left = 266.0
+offset_top = 41.0
+offset_right = 341.0
+offset_bottom = 72.0
 text = "next day"
 
 [node name="Button3" type="Button" parent="."]
@@ -72,10 +79,10 @@ autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 77.0
-offset_right = 71.0
-offset_bottom = 153.0
+offset_left = 38.0
+offset_top = 57.0
+offset_right = 65.0
+offset_bottom = 133.0
 theme_override_constants/separation = 55
 alignment = 2
 metadata/_edit_group_ = true
