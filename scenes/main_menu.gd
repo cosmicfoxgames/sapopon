@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 #signals
 
 func _on_button_button_down() -> void:
-	GameData.start_fresh_game()
+	#GameData.start_fresh_game()
 	GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.GACHA_ROOM]))

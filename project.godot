@@ -22,6 +22,7 @@ PlayerData="*res://scripts/player_data.gd"
 GlobalSignals="*res://scripts/global_signals.gd"
 CFGCommonLibrary="*res://scripts/cfg_common_library.gd"
 GameResources="*res://scripts/game_resources.gd"
+Save="*res://scripts/save.gd"
 
 [display]
 

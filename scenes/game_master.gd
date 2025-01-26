@@ -8,6 +8,7 @@ extends Control
 func _ready() -> void:
 	handle_changing_scene(load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]))
 	conect_all_signals()
+	Save.load_game()
 
 func _process(delta: float) -> void:
 	pass

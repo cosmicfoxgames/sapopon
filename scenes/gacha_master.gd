@@ -26,6 +26,7 @@ func advance_day():
 	PlayerData.currnt_day += 1
 	
 	upper_ui.set_ui(PlayerData.current_money, PlayerData.currnt_day)
+	Save.save_game()
 
 #signals
 

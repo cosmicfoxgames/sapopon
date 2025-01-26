@@ -1,5 +1,7 @@
 extends Node
 
+var full_version = [0, 0, 0]
+
 enum FROG_COLECTIONS {GOTHIC, WILD_WEST, SILLY, SHAPES_N_COLORS, REALISTIC, GAY}
 enum MARKET_FLUCTUATIONS {NEGATIVE, NEUTRAL, POSITIVE}
 
@@ -102,11 +104,11 @@ func get_collection_value():
 			#coleção é uma super influencia
 			if PlayerData.today_market_fluctuation[2].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
 				print("sapo é super flutuação negativa")
-				valor += frog.get_value() * -8
+				valor += frog.get_value() * -2
 			#coleção não é uma super influencia
 			else:
 				print("sapo é flutuação negativa")
-				valor += frog.get_value() * -2
+				valor += frog.get_value() * -1
 		
 		#coleção não tá nas flutuações de hj
 		else:
