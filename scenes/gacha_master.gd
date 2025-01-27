@@ -11,9 +11,12 @@ func _process(delta: float) -> void:
 
 func connect_all_signals():
 	GlobalSignals.advance_day.connect(_on_advance_day)
+	
 
 func get_new_frog():
 	var new_frog = GameData.pick_new_random_frog_from_gacha()
+	GameData.most_recent_frog = new_frog
+	GlobalSignals.got_new_frog.emit(new_frog)
 	#GlobalSignals.print_to_console.emit("GOT A NEW FROG!\nIt is: " + new_frog.id + ", from the " + GameData.FROG_COLECTIONS.keys()[new_frog.colection] + " collesction, and it is the rarity of " + str(new_frog.frog_rarity))
 
 func advance_day():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5q0dvdeuoo1q"]
+[gd_scene load_steps=16 format=3 uid="uid://c5q0dvdeuoo1q"]
 
 [ext_resource type="Texture2D" uid="uid://bokj66ceagg1b" path="res://resources/graphics/ui/start_body.PNG" id="1_14meq"]
 [ext_resource type="Script" path="res://scenes/desktop_master.gd" id="1_vxdqc"]
@@ -10,6 +10,34 @@
 [ext_resource type="Texture2D" uid="uid://pjruikvqf6tc" path="res://resources/graphics/icons/Mini gacha.png" id="5_j5soa"]
 [ext_resource type="Texture2D" uid="uid://cr3wi2oevbyy4" path="res://resources/graphics/icons/Pasta sapo.png" id="6_08typ"]
 [ext_resource type="Texture2D" uid="uid://c2uxlt1qdpdt7" path="res://resources/graphics/icons/Stonks.png" id="7_lrdsq"]
+[ext_resource type="PackedScene" uid="uid://35fox7or2yxn" path="res://scene objects/got_frog.tscn" id="11_f4118"]
+
+[sub_resource type="Animation" id="Animation_bre8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("all_scenes_here:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("all_scenes_here:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_02b60"]
 resource_name = "window_in"
@@ -38,33 +66,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.11, 0.11), Vector2(1.05, 1.05), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_bre8d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("all_scenes_here:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(59, 3)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("all_scenes_here:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_a161b"]
@@ -112,6 +113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_vxdqc")
+got_frog_scene = ExtResource("11_f4118")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

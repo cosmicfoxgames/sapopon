@@ -22,9 +22,11 @@ mouse_filter = 1
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 
 [node name="sfx_handler" type="Node2D" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 script = ExtResource("2_866cm")
 
 [node name="sfx1" type="AudioStreamPlayer2D" parent="sfx_handler"]
