@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ehbnkl7hl4t7"]
+[gd_scene load_steps=3 format=3 uid="uid://ehbnkl7hl4t7"]
 
 [ext_resource type="Script" path="res://scene objects/upper_ui_collection.gd" id="1_mraka"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="2_1oqyf"]
 
 [node name="upper_ui_collection" type="Control"]
 layout_mode = 3
@@ -12,14 +13,16 @@ script = ExtResource("1_mraka")
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 6.0
-offset_top = 29.0
-offset_right = 46.0
-offset_bottom = 52.0
+offset_left = 75.0
+offset_top = 52.0
+offset_right = 115.0
+offset_bottom = 75.0
+theme = ExtResource("2_1oqyf")
 theme_override_font_sizes/font_size = 10
 text = "coleção"
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 291.0
 offset_top = 8.0
@@ -30,10 +33,11 @@ text = "voltar"
 [node name="Label2" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 3.0
-offset_top = 1.0
-offset_right = 128.0
-offset_bottom = 24.0
+offset_left = 63.0
+offset_top = 39.0
+offset_right = 188.0
+offset_bottom = 62.0
+theme = ExtResource("2_1oqyf")
 text = "valor da colecao"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

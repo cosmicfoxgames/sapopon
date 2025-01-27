@@ -11,9 +11,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("game_enter") and ready_to_start == true:
-		GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.DESKTOP]))
+		GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]))
 
 func start_game_intro():
+	GlobalSignals.play_music.emit(load("res://resources/muics/intro.mp3"))
 	anim.play("splash")
 	await anim.animation_finished
 	

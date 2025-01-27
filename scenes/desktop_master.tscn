@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5q0dvdeuoo1q"]
+[gd_scene load_steps=15 format=3 uid="uid://c5q0dvdeuoo1q"]
 
 [ext_resource type="Texture2D" uid="uid://bokj66ceagg1b" path="res://resources/graphics/ui/start_body.PNG" id="1_14meq"]
 [ext_resource type="Script" path="res://scenes/desktop_master.gd" id="1_vxdqc"]
 [ext_resource type="PackedScene" uid="uid://pvg0w1f6cv0v" path="res://scenes/gacha_master.tscn" id="1_y7env"]
+[ext_resource type="Texture2D" uid="uid://bw0t526p3so3a" path="res://resources/graphics/windows/WALLPO.PNG" id="2_0v2bn"]
 [ext_resource type="Texture2D" uid="uid://c8dfvpgexabxk" path="res://resources/graphics/ui/barra.PNG" id="2_j7xjx"]
 [ext_resource type="Texture2D" uid="uid://bet6pqxefx8qo" path="res://resources/graphics/ui/start_head.PNG" id="2_msfkr"]
 [ext_resource type="PackedScene" uid="uid://bx72p4yq4sgjq" path="res://scene objects/button_w_label.tscn" id="3_6rynu"]
@@ -120,6 +121,10 @@ offset_right = 371.0
 offset_bottom = 205.0
 mouse_filter = 1
 color = Color(1, 0.717647, 0.862745, 1)
+
+[node name="Wallpo" type="Sprite2D" parent="."]
+position = Vector2(176, 99)
+texture = ExtResource("2_0v2bn")
 
 [node name="all_scenes_here" type="Control" parent="."]
 unique_name_in_owner = true

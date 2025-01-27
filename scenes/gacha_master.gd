@@ -14,7 +14,7 @@ func connect_all_signals():
 
 func get_new_frog():
 	var new_frog = GameData.pick_new_random_frog_from_gacha()
-	GlobalSignals.print_to_console.emit("GOT A NEW FROG!\nIt is: " + new_frog.id + ", from the " + GameData.FROG_COLECTIONS.keys()[new_frog.colection] + " collesction, and it is the rarity of " + str(new_frog.frog_rarity))
+	#GlobalSignals.print_to_console.emit("GOT A NEW FROG!\nIt is: " + new_frog.id + ", from the " + GameData.FROG_COLECTIONS.keys()[new_frog.colection] + " collesction, and it is the rarity of " + str(new_frog.frog_rarity))
 
 func advance_day():
 	print("veio pro advance day")

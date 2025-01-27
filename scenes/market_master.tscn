@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7v8h1e4gq75d"]
+[gd_scene load_steps=4 format=3 uid="uid://b7v8h1e4gq75d"]
 
 [ext_resource type="Script" path="res://scenes/market_master.gd" id="1_hqx83"]
 [ext_resource type="PackedScene" uid="uid://p201ox7pmchu" path="res://scene objects/upper_ui_market.tscn" id="2_i221t"]
+[ext_resource type="Texture2D" uid="uid://dabn6ihit7217" path="res://resources/graphics/windows/BGBG.PNG" id="2_t2284"]
 
 [node name="market_master" type="Control"]
 layout_mode = 3
@@ -11,6 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hqx83")
+
+[node name="Bgbg" type="Sprite2D" parent="."]
+position = Vector2(176, 93)
+texture = ExtResource("2_t2284")
 
 [node name="upper_ui_market" parent="." instance=ExtResource("2_i221t")]
 unique_name_in_owner = true

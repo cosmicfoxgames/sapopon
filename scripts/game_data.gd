@@ -128,3 +128,4 @@ func start_fresh_game():
 	PlayerData.current_collection = []
 	
 	GameData.is_firt_time = false
+	Save.save_game()

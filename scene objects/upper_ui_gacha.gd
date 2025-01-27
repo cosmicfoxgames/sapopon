@@ -5,6 +5,8 @@ signal spin_gacha_signal(many)
 @onready var moedas = %label_moedas
 @onready var dias = %label_dias
 
+@onready var place_holder_new_frog = %label_new_frog
+
 @onready var console  = %console
 
 func _ready() -> void:
@@ -31,6 +33,9 @@ func spin_gacha(how_many : int = 1):
 	if PlayerData.withdraw_money(how_many) != false:
 		spin_gacha_signal.emit(how_many)
 		change_coin_ammount(PlayerData.current_money)
+		
+		#DELETAR DEPOIS
+		place_holder_new_frog.visible = true
 	else: pass#fazer alguma coisa pra mostrar pro player q ele n tem dinheiro o suficente
 
 func advance_to_next_day():
@@ -56,3 +61,7 @@ func _on_button_3_button_down() -> void:
 #botão ir para proximo dia
 func _on_button_2_button_down() -> void:
 	GlobalSignals.advance_day.emit()
+
+#spinned gacha
+func _on_gacha_got_new_frog() -> void:
+	spin_gacha()
