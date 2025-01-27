@@ -4,6 +4,7 @@ extends Control
 
 func _ready() -> void:
 	upper_ui.set_ui()
+	GlobalSignals.play_music.emit(GameResources.get_resource(GameResources.MUSICS["MARKET"]))
 
 func _process(delta: float) -> void:
 	pass

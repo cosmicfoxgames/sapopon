@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jlby0rthhpuq"
+path="res://.godot/imported/frog market.mp3-2a2f553284a0770915c740285c9b6c2a.mp3str"
+
+[deps]
+
+source_file="res://resources/musics/frog market.mp3"
+dest_files=["res://.godot/imported/frog market.mp3-2a2f553284a0770915c740285c9b6c2a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -14,16 +14,18 @@ func _process(delta: float) -> void:
 		GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]))
 
 func start_game_intro():
-	GlobalSignals.play_music.emit(load("res://resources/muics/intro.mp3"))
 	anim.play("splash")
 	await anim.animation_finished
 	
 	if GameData.is_firt_time == true:
 		print("is player_first time")
+		GlobalSignals.play_music.emit(GameResources.get_resource(GameResources.MUSICS["INTRO"]))
 		cutscene.visible = true
 		cutscene.play_cutsene()
 		await cutscene.finished_cutscene
 		cutscene.visible = false
+		GlobalSignals.stop_music.emit()
+		GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["IMPACT"]))
 	
 	tile.visible = true
 	tile.start_title_screen()

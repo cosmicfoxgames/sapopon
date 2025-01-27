@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gy03uhfgo67q"
+path="res://.godot/imported/Bolsa de Valores.mp3-83f6886b7ee3fc08365ef5e4542af040.mp3str"
+
+[deps]
+
+source_file="res://resources/musics/Bolsa de Valores.mp3"
+dest_files=["res://.godot/imported/Bolsa de Valores.mp3-83f6886b7ee3fc08365ef5e4542af040.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

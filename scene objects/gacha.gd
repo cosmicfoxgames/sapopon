@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 func get_gacha():
 	can_interact = false
 	anim.play("gacha")
+	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["GACHA_SPIN"]))
 	await anim.animation_finished
 	
 	if is_hovering == false:

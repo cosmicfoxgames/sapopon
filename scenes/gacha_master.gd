@@ -5,13 +5,13 @@ extends Control
 func _ready() -> void:
 	connect_all_signals()
 	upper_ui.set_ui(PlayerData.current_money, PlayerData.currnt_day)
+	GlobalSignals.play_music.emit(GameResources.get_resource(GameResources.MUSICS["GACHA"]))
 
 func _process(delta: float) -> void:
 	pass
 
 func connect_all_signals():
 	GlobalSignals.advance_day.connect(_on_advance_day)
-	
 
 func get_new_frog():
 	var new_frog = GameData.pick_new_random_frog_from_gacha()

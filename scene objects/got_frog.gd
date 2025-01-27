@@ -28,5 +28,5 @@ func initiate_new_frog_anim(frog : FrogTemplate):
 	can_skip_already = true
 
 func hide_itself():
-	visible = false
 	get_tree().paused = false
+	queue_free()
