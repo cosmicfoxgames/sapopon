@@ -12,7 +12,7 @@ var current_collection_value : int
 func withdraw_money(ammt):
 	if (current_money - ammt) >= 0: current_money -= ammt
 	else:
-		GlobalSignals.print_to_console.emit("não tem dinheiro pra isso")
+		#GlobalSignals.print_to_console.emit("não tem dinheiro pra isso")
 		return(false)
 
 func add_new_frog_to_collection(frog : FrogTemplate):
