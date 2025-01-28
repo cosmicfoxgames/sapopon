@@ -53,6 +53,18 @@ game_enter={
 ]
 }
 
+[internationalization]
+
+locale/translation_remaps={
+"res://resources/graphics/intro/CUTSCENE0.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT0.PNG:pt"),
+"res://resources/graphics/intro/CUTSCENE1.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT1.PNG:pt"),
+"res://resources/graphics/intro/CUTSCENE2.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT2.PNG:pt"),
+"res://resources/graphics/intro/CUTSCENE3.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT3.PNG:pt"),
+"res://resources/graphics/intro/CUTSCENE4.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT4.PNG:pt")
+}
+locale/translations=PackedStringArray("res://localization/sapopon - localization - propriedades.en.translation", "res://localization/sapopon - localization - propriedades.pt.translation", "res://localization/sapopon - localization - sapos.en.translation", "res://localization/sapopon - localization - sapos.pt.translation", "res://localization/sapopon - localization - ui.en.translation", "res://localization/sapopon - localization - ui.pt.translation")
+locale/test="pt"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

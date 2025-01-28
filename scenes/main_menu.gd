@@ -11,15 +11,8 @@ func _process(delta: float) -> void:
 
 #signals
 
-#newgame
-func _on_button_button_down() -> void:
+func _on_butt_log_in_button_click() -> void:
 	GameData.start_fresh_game()
 	GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.DESKTOP]))
-
-#credits
-func _on_button_2_button_down() -> void:
-	pass # Replace with function body.
-
-#exit
-func _on_button_3_button_down() -> void:
+func _on_butt_log_out_button_click() -> void:
 	get_tree().quit()

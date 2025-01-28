@@ -19,7 +19,7 @@ func set_frog_grid():
 		new_frog_icon.set_itself(load(GameData.FROG_TEMPLATE_PATH % i))
 
 func set_ui():
-	valor_colec.text = "coleção vale: " + str(PlayerData.current_collection_value) + " moedas"
+	valor_colec.text = tr("collection_value") % str(PlayerData.current_collection_value)
 	
 	var collect_txt = ""
 	for i in PlayerData.current_collection:

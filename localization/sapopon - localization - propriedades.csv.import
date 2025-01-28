@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dwho2dq5ds8cn"
+
+[deps]
+
+files=["res://localization/sapopon - localization - propriedades.pt.translation", "res://localization/sapopon - localization - propriedades.en.translation"]
+
+source_file="res://localization/sapopon - localization - propriedades.csv"
+dest_files=["res://localization/sapopon - localization - propriedades.pt.translation", "res://localization/sapopon - localization - propriedades.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

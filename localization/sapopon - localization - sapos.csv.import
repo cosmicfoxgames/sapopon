@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cmpbyddo2foma"
+
+[deps]
+
+files=["res://localization/sapopon - localization - sapos.pt.translation", "res://localization/sapopon - localization - sapos.en.translation"]
+
+source_file="res://localization/sapopon - localization - sapos.csv"
+dest_files=["res://localization/sapopon - localization - sapos.pt.translation", "res://localization/sapopon - localization - sapos.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

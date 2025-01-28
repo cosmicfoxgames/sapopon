@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b0rg7k83cloab"
+
+[deps]
+
+files=["res://localization/sapopon - localization - ui.pt.translation", "res://localization/sapopon - localization - ui.en.translation"]
+
+source_file="res://localization/sapopon - localization - ui.csv"
+dest_files=["res://localization/sapopon - localization - ui.pt.translation", "res://localization/sapopon - localization - ui.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

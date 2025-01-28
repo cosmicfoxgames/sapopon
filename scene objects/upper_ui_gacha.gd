@@ -23,19 +23,17 @@ func print_to_console(txt : String):
 	console.text = txt
 
 func change_coin_ammount(ammt : int):
-	moedas.text = "moedas: " + str(ammt)
+	moedas.text = tr("your_coins") % str(ammt)
 
 func set_ui(coins : int, dia : int):
-	moedas.text = "moedas: " + str(coins)
-	dias.text = "dia: " + str(dia)
+	moedas.text = tr("your_coins") % str(coins)
+	#dias.text = "dia: " + str(dia)
 
 func spin_gacha(how_many : int = 1):
 	if PlayerData.withdraw_money(how_many) != false:
 		spin_gacha_signal.emit(how_many)
 		change_coin_ammount(PlayerData.current_money)
 		
-		#DELETAR DEPOIS
-		place_holder_new_frog.visible = true
 	else: pass#fazer alguma coisa pra mostrar pro player q ele n tem dinheiro o suficente
 
 func advance_to_next_day():

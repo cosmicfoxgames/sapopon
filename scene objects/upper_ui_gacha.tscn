@@ -23,18 +23,6 @@ theme = ExtResource("2_g7kr1")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "moedas"
 
-[node name="label_new_frog" type="Label" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 22.0
-offset_top = 35.0
-offset_right = 149.0
-offset_bottom = 53.0
-theme = ExtResource("2_g7kr1")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "VOCÊ CONSEGUIU UM SAPO NOVO!"
-
 [node name="label_dias" type="Label" parent="."]
 unique_name_in_owner = true
 visible = false

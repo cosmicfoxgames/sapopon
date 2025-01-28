@@ -2,6 +2,7 @@ extends Control
 
 @onready var anim = %AnimationPlayer
 @onready var all_scenes = %all_scenes_here
+@onready var days = %days_label
 
 @export var got_frog_scene : PackedScene
 
@@ -18,6 +19,7 @@ func connect_all_signals():
 func on_first_start_game():
 	handle_changing_scene(load(GameData.scene_paths[GameData.SCENES.GACHA_ROOM]))
 	anim.play("window_in")
+	days.text = tr("day") % str(PlayerData.currnt_day)
 	await anim.animation_finished
 
 func handle_changing_scene(scene_to_go : PackedScene):

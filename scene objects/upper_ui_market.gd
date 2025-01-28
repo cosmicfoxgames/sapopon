@@ -23,7 +23,7 @@ func set_ui():
 			text_to_set = text_to_set + i + " !SUPER!\n"
 		else: text_to_set = text_to_set + i + "\n"
 	
-	board.text = text_to_set
+	#board.text = text_to_set
 
 #signals
 

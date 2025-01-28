@@ -23,7 +23,7 @@ func initiate_new_frog_anim(frog : FrogTemplate):
 	await anim.animation_finished
 	anim.play("frgo_wiggle")
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	
 	can_skip_already = true
 
