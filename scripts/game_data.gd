@@ -4,6 +4,7 @@ var full_version = [0, 0, 0]
 
 enum FROG_COLECTIONS {LUCKY, HARD, STYLISH, ADVENTURE, MYSTIC, MATERIALS}
 enum MARKET_FLUCTUATIONS {NEGATIVE, NEUTRAL, POSITIVE}
+enum FLUCTUATION_RATE {XTRA_BAD, BAD, GOOD, XTRA_GOOD}
 
 enum SCENES {GACHA_ROOM, MAIN_MENU, MARKET, COLLECTION, DESKTOP, INTRO}
 
@@ -90,38 +91,44 @@ func get_collection_value():
 	var valor = 0
 	
 	for i in PlayerData.current_collection:
-		var frog = load(GameData.FROG_TEMPLATE_PATH % i)
-		print("sapo é: " + i + ", com valor de: " + str(frog.get_value()))
-		print(frog.colection)
-		
-		#coleção do sapo é uma flutuiação positiva
-		if PlayerData.today_market_fluctuation[0].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
-			#coleção é uma super influencia
-			if PlayerData.today_market_fluctuation[2].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
-				print("sapo é super flutuação positiva")
-				valor += frog.get_value() * 8
-			#coleção não é uma super influencia
-			else:
-				print("sapo é flutuação positiva")
-				valor += frog.get_value() * 2
-		
-		#coleção do sapo é uma flutuiação negativa
-		elif PlayerData.today_market_fluctuation[1].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
-			#coleção é uma super influencia
-			if PlayerData.today_market_fluctuation[2].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
-				print("sapo é super flutuação negativa")
-				valor += frog.get_value() * -2
-			#coleção não é uma super influencia
-			else:
-				print("sapo é flutuação negativa")
-				valor += frog.get_value() * -1
-		
-		#coleção não tá nas flutuações de hj
-		else:
-			print("sapo não tá em flutuação")
-			valor += frog.get_value()
+		valor += get_frog_influenced_value(load(GameData.FROG_TEMPLATE_PATH % i))
 	
 	PlayerData.current_collection_value = valor
+
+func get_frog_influenced_value(frog : FrogTemplate):
+	var valor = 0
+	print("veio pro get_frog_influenced_value")
+	print("sapo é: " + frog.id + ", com valor de: " + str(frog.get_value()))
+	
+	#coleção do sapo é uma flutuiação positiva
+	if PlayerData.today_market_fluctuation[0].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
+		#coleção é uma super influencia
+		if PlayerData.today_market_fluctuation[2].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
+			print("sapo é super flutuação positiva")
+			valor = frog.get_value() * 8
+		#coleção não é uma super influencia
+		else:
+			print("sapo é flutuação positiva")
+			valor = frog.get_value() * 2
+	
+	#coleção do sapo é uma flutuiação negativa
+	elif PlayerData.today_market_fluctuation[1].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
+		#coleção é uma super influencia
+		if PlayerData.today_market_fluctuation[2].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
+			print("sapo é super flutuação negativa")
+			valor = frog.get_value() * -2
+		#coleção não é uma super influencia
+		else:
+			print("sapo é flutuação negativa")
+			valor = frog.get_value() * -1
+	
+	#coleção não tá nas flutuações de hj
+	else:
+		print("sapo não tá em flutuação")
+		valor = frog.get_value()
+	
+	print("valor final de: " + str(valor))
+	return(valor)
 
 func start_fresh_game():
 	set_market_fluctuation_for_today()

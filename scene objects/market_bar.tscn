@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh700n3mbnd8w"]
+
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="1_dwx8j"]
+[ext_resource type="Script" path="res://scene objects/market_bar.gd" id="1_t6led"]
+[ext_resource type="Texture2D" uid="uid://ckre62kemsqnp" path="res://resources/graphics/ui/market bars/xtra good.png" id="2_rb66j"]
+[ext_resource type="Texture2D" uid="uid://64coujsup7d7" path="res://resources/graphics/ui/market bars/good.png" id="2_x7pis"]
+[ext_resource type="Texture2D" uid="uid://cxnwnfmrgexr1" path="res://resources/graphics/ui/market bars/bad.png" id="4_pp3p8"]
+[ext_resource type="Texture2D" uid="uid://by5d82ajttgwi" path="res://resources/graphics/ui/market bars/xtra bad.png" id="5_pcpud"]
+
+[node name="market_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 22.0
+script = ExtResource("1_t6led")
+good_bar = ExtResource("2_x7pis")
+xtra_good_bar = ExtResource("2_rb66j")
+bad_bar = ExtResource("4_pp3p8")
+xtra_bad_bar = ExtResource("5_pcpud")
+metadata/_edit_vertical_guides_ = [100.0]
+metadata/_edit_horizontal_guides_ = [22.0]
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 98.0
+offset_bottom = 11.0
+mouse_filter = 1
+theme = ExtResource("1_dwx8j")
+text = "De Natureza Mística"
+vertical_alignment = 1
+clip_text = true
+
+[node name="bar" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(50, 15)
+texture = ExtResource("2_rb66j")

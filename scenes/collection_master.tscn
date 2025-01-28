@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx48mcpo7mrfj"]
+[gd_scene load_steps=6 format=3 uid="uid://dx48mcpo7mrfj"]
 
-[ext_resource type="PackedScene" uid="uid://ehbnkl7hl4t7" path="res://scene objects/upper_ui_collection.tscn" id="1_u4d0r"]
 [ext_resource type="Script" path="res://scenes/collection_master.gd" id="1_wqs75"]
 [ext_resource type="Texture2D" uid="uid://cbivx2ugvm2fm" path="res://resources/graphics/windows/colecao.PNG" id="2_wgxc4"]
+[ext_resource type="Script" path="res://scene objects/upper_ui_collection.gd" id="3_k2wrw"]
+[ext_resource type="PackedScene" uid="uid://dj56ookaya5wy" path="res://scene objects/frog_icon.tscn" id="4_4f3ao"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="5_0u83y"]
 
 [node name="collection_master" type="Control"]
 layout_mode = 3
@@ -18,5 +20,53 @@ script = ExtResource("1_wqs75")
 position = Vector2(176, 93)
 texture = ExtResource("2_wgxc4")
 
-[node name="upper_ui_collection" parent="." instance=ExtResource("1_u4d0r")]
+[node name="upper_ui_collection" type="Control" parent="."]
 unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("3_k2wrw")
+frog_icon = ExtResource("4_4f3ao")
+
+[node name="Label" type="Label" parent="upper_ui_collection"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 75.0
+offset_top = 52.0
+offset_right = 115.0
+offset_bottom = 75.0
+mouse_filter = 1
+theme = ExtResource("5_0u83y")
+theme_override_font_sizes/font_size = 10
+text = "coleção"
+
+[node name="Label2" type="Label" parent="upper_ui_collection"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 63.0
+offset_top = 39.0
+offset_right = 188.0
+offset_bottom = 62.0
+mouse_filter = 1
+theme = ExtResource("5_0u83y")
+text = "valor da colecao"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="upper_ui_collection"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 59.0
+offset_top = 63.0
+offset_right = 285.0
+offset_bottom = 181.0
+
+[node name="GridContainer" type="GridContainer" parent="upper_ui_collection/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 12
+columns = 3
