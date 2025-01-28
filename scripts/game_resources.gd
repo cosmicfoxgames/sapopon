@@ -17,5 +17,14 @@ const SFX = {
 	"BUBBLE_CLICK" : "res://resources/sfx/bubbleclick3.mp3"
 }
 
+const FROG_COLLECTIONS_COLORS = {
+	"LUCKY" : Color(1, 0.924, 0.24), #amarelo
+	"HARD" : Color(0.4, 0.62, 1), #azul
+	"STYLISH" : Color(1, 0.38, 0.762), #rosa
+	"ADVENTURE" : Color(1, 0.18, 0.262), #vermelho
+	"MYSTIC" : Color(0.581, 0.178, 0.89), #roxo
+	"MATERIALS" : Color(0.47, 0.47, 0.47) #cinza
+}
+
 func get_resource(res):
 	return(load(res))

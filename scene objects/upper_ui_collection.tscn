@@ -1,34 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://ehbnkl7hl4t7"]
+[gd_scene load_steps=4 format=3 uid="uid://ehbnkl7hl4t7"]
 
 [ext_resource type="Script" path="res://scene objects/upper_ui_collection.gd" id="1_mraka"]
 [ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="2_1oqyf"]
+[ext_resource type="PackedScene" uid="uid://dj56ookaya5wy" path="res://scene objects/frog_icon.tscn" id="2_ekptv"]
 
 [node name="upper_ui_collection" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("1_mraka")
+frog_icon = ExtResource("2_ekptv")
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 75.0
 offset_top = 52.0
 offset_right = 115.0
 offset_bottom = 75.0
+mouse_filter = 1
 theme = ExtResource("2_1oqyf")
 theme_override_font_sizes/font_size = 10
 text = "coleção"
-
-[node name="Button" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 291.0
-offset_top = 8.0
-offset_right = 345.0
-offset_bottom = 39.0
-text = "voltar"
 
 [node name="Label2" type="Label" parent="."]
 unique_name_in_owner = true
@@ -37,7 +33,23 @@ offset_left = 63.0
 offset_top = 39.0
 offset_right = 188.0
 offset_bottom = 62.0
+mouse_filter = 1
 theme = ExtResource("2_1oqyf")
 text = "valor da colecao"
 
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 59.0
+offset_top = 63.0
+offset_right = 267.0
+offset_bottom = 181.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3

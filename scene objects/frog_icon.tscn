@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj56ookaya5wy"]
+
+[ext_resource type="Script" path="res://scene objects/frog_icon.gd" id="1_du71u"]
+[ext_resource type="Texture2D" uid="uid://bre3eti82wsj3" path="res://resources/graphics/icons/sapo.png" id="2_2nr1w"]
+[ext_resource type="Texture2D" uid="uid://bfkjwwg6i7dol" path="res://resources/graphics/ui/border.png" id="3_gh2ho"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="4_3i3s6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f22w3"]
+size = Vector2(29, 29)
+
+[node name="frog_icon" type="Control"]
+custom_minimum_size = Vector2(56, 44)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 56.0
+offset_bottom = 44.0
+mouse_filter = 1
+script = ExtResource("1_du71u")
+
+[node name="Sapo" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 1, 0.4, 1)
+position = Vector2(28, 15)
+texture = ExtResource("2_2nr1w")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 43.0
+offset_bottom = 31.0
+texture = ExtResource("3_gh2ho")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="label" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_right = 12.0
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="label"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -12.0
+offset_top = 33.0
+offset_right = 44.0
+offset_bottom = 44.0
+mouse_filter = 1
+color = Color(0.93, 0.851415, 0.5673, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="label/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 11.0
+mouse_filter = 1
+theme = ExtResource("4_3i3s6")
+text = "sapo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(27.5, 15.5)
+shape = SubResource("RectangleShape2D_f22w3")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
