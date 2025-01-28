@@ -63,7 +63,6 @@ locale/translation_remaps={
 "res://resources/graphics/intro/CUTSCENE4.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT4.PNG:pt")
 }
 locale/translations=PackedStringArray("res://localization/sapopon - localization - propriedades.en.translation", "res://localization/sapopon - localization - propriedades.pt.translation", "res://localization/sapopon - localization - sapos.en.translation", "res://localization/sapopon - localization - sapos.pt.translation", "res://localization/sapopon - localization - ui.en.translation", "res://localization/sapopon - localization - ui.pt.translation")
-locale/test="pt"
 
 [rendering]
 
