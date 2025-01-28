@@ -26,7 +26,7 @@ func set_button():
 
 func on_click():
 	clicked.emit(label)
-	#ButtonActions.clicked_on_button(label)
+	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["BUBBLE_CLICK"]))
 
 #signals
 

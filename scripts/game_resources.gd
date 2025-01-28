@@ -12,7 +12,9 @@ const SFX = {
 	"BOOTUP" : "res://resources/sfx/frogbootup.mp3",
 	"GACHA_SPIN" : "res://resources/sfx/gachabuy.mp3",
 	"FROG_SELL" : "res://resources/sfx/frogsell.mp3",
-	"IMPACT" : "res://resources/sfx/undertaleimpact.mp3"
+	"IMPACT" : "res://resources/sfx/undertaleimpact.mp3",
+	"DAMP_CLICK" : "res://resources/sfx/waterclick.mp3",
+	"BUBBLE_CLICK" : "res://resources/sfx/bubbleclick3.mp3"
 }
 
 func get_resource(res):

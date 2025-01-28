@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5q0dvdeuoo1q"]
+[gd_scene load_steps=18 format=3 uid="uid://c5q0dvdeuoo1q"]
 
 [ext_resource type="Texture2D" uid="uid://bokj66ceagg1b" path="res://resources/graphics/ui/start_body.PNG" id="1_14meq"]
 [ext_resource type="Script" path="res://scenes/desktop_master.gd" id="1_vxdqc"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cr3wi2oevbyy4" path="res://resources/graphics/icons/Pasta sapo.png" id="6_08typ"]
 [ext_resource type="Texture2D" uid="uid://c2uxlt1qdpdt7" path="res://resources/graphics/icons/Stonks.png" id="7_lrdsq"]
 [ext_resource type="PackedScene" uid="uid://35fox7or2yxn" path="res://scene objects/got_frog.tscn" id="11_f4118"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="12_407c5"]
+[ext_resource type="PackedScene" uid="uid://bwxblhr0sly7e" path="res://scene objects/game_button.tscn" id="13_4yhrd"]
 
 [sub_resource type="Animation" id="Animation_bre8d"]
 length = 0.001
@@ -186,11 +188,28 @@ layout_mode = 2
 label = "market"
 icon = ExtResource("7_lrdsq")
 
+[node name="days_label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 299.0
+offset_top = 186.0
+offset_right = 343.0
+offset_bottom = 197.0
+theme = ExtResource("12_407c5")
+text = "Dia 001"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_y7tec")
 }
+
+[node name="game_button" parent="." instance=ExtResource("13_4yhrd")]
+offset_left = 52.5293
+offset_top = 186.137
+offset_right = 105.529
+offset_bottom = 197.137
+button_txt = "next_day"
 
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_gacha" to="." method="_on_button_gacha_clicked"]
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_collection" to="." method="_on_button_collection_clicked"]
