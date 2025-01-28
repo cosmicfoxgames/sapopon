@@ -42,7 +42,7 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_left = 59.0
 offset_top = 63.0
-offset_right = 267.0
+offset_right = 285.0
 offset_bottom = 181.0
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
@@ -50,6 +50,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 12
+theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 12
 columns = 3
