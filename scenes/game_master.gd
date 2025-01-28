@@ -9,6 +9,7 @@ func _ready() -> void:
 	Save.load_game()
 	handle_changing_scene(load(GameData.scene_paths[GameData.SCENES.INTRO]))
 	conect_all_signals()
+	GameResources.populate_frogs_by_raritie()
 
 func _process(delta: float) -> void:
 	pass
@@ -36,9 +37,6 @@ func play_music(music):
 
 func stop_music():
 	music_player.stop()
-
-#func fade_music():
-	#const rate = 5
 
 #signals
 

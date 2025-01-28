@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh700n3mbnd8w"]
+[gd_scene load_steps=8 format=3 uid="uid://dh700n3mbnd8w"]
 
 [ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="1_dwx8j"]
 [ext_resource type="Script" path="res://scene objects/market_bar.gd" id="1_t6led"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://64coujsup7d7" path="res://resources/graphics/ui/market bars/good.png" id="2_x7pis"]
 [ext_resource type="Texture2D" uid="uid://cxnwnfmrgexr1" path="res://resources/graphics/ui/market bars/bad.png" id="4_pp3p8"]
 [ext_resource type="Texture2D" uid="uid://by5d82ajttgwi" path="res://resources/graphics/ui/market bars/xtra bad.png" id="5_pcpud"]
+[ext_resource type="Texture2D" uid="uid://bre3eti82wsj3" path="res://resources/graphics/icons/sapo.png" id="7_uq5ns"]
 
 [node name="market_bar" type="Control"]
 layout_mode = 3
@@ -23,8 +24,8 @@ metadata/_edit_horizontal_guides_ = [22.0]
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 5.0
-offset_right = 98.0
+offset_left = 15.0
+offset_right = 100.0
 offset_bottom = 11.0
 mouse_filter = 1
 theme = ExtResource("1_dwx8j")
@@ -36,3 +37,8 @@ clip_text = true
 unique_name_in_owner = true
 position = Vector2(50, 15)
 texture = ExtResource("2_rb66j")
+
+[node name="icon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(7, 5)
+texture = ExtResource("7_uq5ns")

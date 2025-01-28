@@ -18,18 +18,21 @@ const scene_paths = [
 ]
 
 const FROG_TEMPLATE_PATH = "res://resources/frog_resources/%s.tres"
-const FROG_LIST = ["frog_angel", "frog_demon", "frog_future", "frog_medieval", "frog_pieta", "frog_cheese", "frog_jfrog", "frog_chad", "frog_hfroger", "frog_gnome", "frog_autism", "frog_paradox", "frog_tan", "frog_ladybug", "frog_low_poly", "frog_sapone", "frog_lips", "frog_vga", "frog_french", "frog_war", "frog_rogue", "frog_alien", "frog_space", "frog_primitive", "frog_mage", "frog_greek", "frog_atom", "frog_sound", "frog_bread", "frog_grof", "frog_anime", "frog_abstract", "frog_pipa_l", "frog_pipa_f"]
-#const FROG_LIST = ["frog_low_poly"]
+const FROG_LIST = ["frog_angel", "frog_demon", "frog_future", "frog_medieval", "frog_pieta", "frog_cheese", "frog_jfrog", "frog_chad", "frog_hfroger", "frog_gnome", "frog_autism", "frog_paradox", "frog_tan", "frog_ladybug", "frog_low_poly", "frog_sapone", "frog_lips", "frog_vga", "frog_french", "frog_war", "frog_rogue", "frog_alien", "frog_space", "frog_primitive", "frog_mage", "frog_greek", "frog_atom", "frog_sound", "frog_bread", "frog_grof", "frog_anime", "frog_abstract", "frog_pipa_l"]
 
 const DEFAUT_START_PLAYER_MONEY = 10
+
+#win loose condition based on how much money you have
+const LOOSE_CONDITION = -30
+const WIN_CONDITION = 1000000
 
 var is_firt_time = true
 var most_recent_frog : FrogTemplate
 
-func get_all_frog_templates():
+func get_all_frog_templates(list = FROG_LIST):
 	var all_frogs = []
 	
-	for i in FROG_LIST:
+	for i in list:
 		all_frogs.append(load(FROG_TEMPLATE_PATH % i))
 	
 	return(all_frogs)
@@ -39,7 +42,19 @@ func get_random_frong_res(frog_res_list : Array):
 	return(frog_res)
 
 func pick_new_random_frog_from_gacha():
-	var new_frog = get_random_frong_res(get_all_frog_templates())
+	var new_frog #= get_random_frong_res(get_all_frog_templates())
+	var chance = CFGCommonLibrary.get_rand_number(1, 100)
+	var pool_to_pick_frog
+	
+	print("chance of rarity is: " + str(chance))
+	
+	if chance >= 1 and chance <= 60: pool_to_pick_frog = GameResources.frogs_by_ratitie["COMMOM"]
+	elif chance > 60 and chance <= 85: pool_to_pick_frog = GameResources.frogs_by_ratitie["INCOMMOM"]
+	elif chance > 85 and chance <= 95: pool_to_pick_frog = GameResources.frogs_by_ratitie["RARE"]
+	elif chance > 95 and chance <= 100: pool_to_pick_frog = GameResources.frogs_by_ratitie["UNIQUE"]
+	
+	new_frog = get_random_frong_res(get_all_frog_templates(pool_to_pick_frog))
+	
 	PlayerData.add_new_frog_to_collection(new_frog)
 	return(new_frog)
 

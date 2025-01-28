@@ -25,24 +25,24 @@ func set_ui():
 	set_fluctuation_markers()
 	set_frog_collection()
 
-func add_market_indicator(parent, market_name, status : GameData.FLUCTUATION_RATE):
+func add_market_indicator(raw_key, parent, market_name, status : GameData.FLUCTUATION_RATE):
 	var new_indicator = market_indicator.instantiate()
 	parent.add_child(new_indicator)
 	
-	new_indicator.set_itself(market_name, status)
+	new_indicator.set_itself(market_name, status, GameResources.FROG_COLLECTIONS_COLORS[raw_key])
 
 func set_fluctuation_markers():
 	#flutuações boas
 	for i in PlayerData.today_market_fluctuation[0]:
 		if i == PlayerData.today_market_fluctuation[2][0] or i == PlayerData.today_market_fluctuation[2][1]:
-			add_market_indicator(indicator_container, (tr(i) + " !"), GameData.FLUCTUATION_RATE.XTRA_GOOD)
-		else: add_market_indicator(indicator_container, i, GameData.FLUCTUATION_RATE.GOOD)
+			add_market_indicator(i, indicator_container, (tr(i) + " !"), GameData.FLUCTUATION_RATE.XTRA_GOOD)
+		else: add_market_indicator(i, indicator_container, i, GameData.FLUCTUATION_RATE.GOOD)
 	
 	#flutuações ruins
 	for i in PlayerData.today_market_fluctuation[1]:
 		if i == PlayerData.today_market_fluctuation[2][0] or i == PlayerData.today_market_fluctuation[2][1]:
-			add_market_indicator(indicator_container, (tr(i) + " !"), GameData.FLUCTUATION_RATE.XTRA_BAD)
-		else: add_market_indicator(indicator_container, i, GameData.FLUCTUATION_RATE.BAD)
+			add_market_indicator(i, indicator_container, (tr(i) + " !"), GameData.FLUCTUATION_RATE.XTRA_BAD)
+		else: add_market_indicator(i, indicator_container, i, GameData.FLUCTUATION_RATE.BAD)
 
 func set_frog_collection():
 	for i in PlayerData.current_collection:
@@ -97,4 +97,8 @@ func _on_game_button_button_click() -> void:
 		PlayerData.current_money += coin_ammnt_to_add
 		for i in frogs_to_subtract:
 			PlayerData.current_collection.erase(i)
+		
+		coin_ammnt_to_add = 0
+		frogs_to_subtract = []
+		coins_label.text = str(coin_ammnt_to_add)
 	else: print("can't sell for lss than 0!")

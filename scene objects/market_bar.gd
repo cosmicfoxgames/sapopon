@@ -2,6 +2,7 @@ extends Control
 
 @onready var label = %Label
 @onready var bar_texture = %bar
+@onready var icon = %icon
 
 @export var good_bar : Resource
 @export var xtra_good_bar : Resource
@@ -14,8 +15,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func set_itself(stock : String, fluctuation : GameData.FLUCTUATION_RATE):
+func set_itself(stock : String, fluctuation : GameData.FLUCTUATION_RATE, stock_color : Color):
 	label.text = stock
+	icon.modulate = stock_color
+	
 	match fluctuation:
 		GameData.FLUCTUATION_RATE.XTRA_BAD: bar_texture.texture = xtra_bad_bar
 		GameData.FLUCTUATION_RATE.BAD: bar_texture.texture = bad_bar

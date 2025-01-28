@@ -26,5 +26,21 @@ const FROG_COLLECTIONS_COLORS = {
 	"MATERIALS" : Color(0.47, 0.47, 0.47) #cinza
 }
 
+var frogs_by_ratitie = {
+	"COMMOM" : [],
+	"INCOMMOM" : [],
+	"RARE" : [],
+	"UNIQUE" : []
+}
+
 func get_resource(res):
 	return(load(res))
+
+func populate_frogs_by_raritie():
+	print("populating frog by raritie list")
+	for i in GameData.FROG_LIST:
+		var frog_res : FrogTemplate = load(GameData.FROG_TEMPLATE_PATH % i)
+		
+		frogs_by_ratitie[frog_res.RARITY.keys()[frog_res.frog_rarity]].append(frog_res.id)
+	
+	print(frogs_by_ratitie)

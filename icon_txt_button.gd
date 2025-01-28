@@ -29,6 +29,7 @@ func set_frog(frog : FrogTemplate):
 	label.text = frog.id
 	icon.modulate = GameResources.FROG_COLLECTIONS_COLORS[GameData.FROG_COLECTIONS.keys()[frog.colection]]
 	frog_res = frog
+	label.add_theme_color_override("font_color", Color.WHITE)
 
 func click():
 	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["DAMP_CLICK"]))
