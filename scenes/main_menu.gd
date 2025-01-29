@@ -4,7 +4,7 @@ extends Control
 
 func _ready() -> void:
 	GlobalSignals.stop_music.emit()
-	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["BOOTUP"]))
+	GlobalSignals.play_sfx.emit(GameResources.get_random_frog_ribbit())
 
 func _process(delta: float) -> void:
 	pass

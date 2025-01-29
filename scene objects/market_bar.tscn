@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://64coujsup7d7" path="res://resources/graphics/ui/market bars/good.png" id="2_x7pis"]
 [ext_resource type="Texture2D" uid="uid://cxnwnfmrgexr1" path="res://resources/graphics/ui/market bars/bad.png" id="4_pp3p8"]
 [ext_resource type="Texture2D" uid="uid://by5d82ajttgwi" path="res://resources/graphics/ui/market bars/xtra bad.png" id="5_pcpud"]
-[ext_resource type="Texture2D" uid="uid://bre3eti82wsj3" path="res://resources/graphics/icons/sapo.png" id="7_uq5ns"]
+[ext_resource type="Texture2D" uid="uid://8i14u74sjcw2" path="res://resources/graphics/icons/rates.png" id="7_3tmay"]
 
 [node name="market_bar" type="Control"]
 layout_mode = 3
@@ -41,4 +41,4 @@ texture = ExtResource("2_rb66j")
 [node name="icon" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(7, 5)
-texture = ExtResource("7_uq5ns")
+texture = ExtResource("7_3tmay")

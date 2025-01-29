@@ -101,4 +101,5 @@ func _on_game_button_button_click() -> void:
 		coin_ammnt_to_add = 0
 		frogs_to_subtract = []
 		coins_label.text = str(coin_ammnt_to_add)
-	else: print("can't sell for lss than 0!")
+	else:
+		GlobalSignals.show_warning.emit(GameData.GAME_WARNINGS["CANT_SELL_LESS_ZERO"])

@@ -17,6 +17,15 @@ const SFX = {
 	"BUBBLE_CLICK" : "res://resources/sfx/bubbleclick3.mp3"
 }
 
+const FROG_SFX = [
+	"res://resources/sfx/ribbit1.mp3",
+	"res://resources/sfx/ribbit2.mp3",
+	"res://resources/sfx/ribbit3.mp3",
+	"res://resources/sfx/ribbit4.mp3",
+	"res://resources/sfx/ribbit5.mp3",
+	"res://resources/sfx/ribbit6.mp3"
+]
+
 const FROG_COLLECTIONS_COLORS = {
 	"LUCKY" : Color(1, 0.924, 0.24), #amarelo
 	"HARD" : Color(0.4, 0.62, 1), #azul
@@ -35,6 +44,9 @@ var frogs_by_ratitie = {
 
 func get_resource(res):
 	return(load(res))
+
+func get_random_frog_ribbit():
+	return(load(FROG_SFX.pick_random()))
 
 func populate_frogs_by_raritie():
 	print("populating frog by raritie list")

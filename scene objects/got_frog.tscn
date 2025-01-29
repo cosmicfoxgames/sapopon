@@ -263,6 +263,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_2qvfj")
 metadata/_edit_vertical_guides_ = [176.0]
 
@@ -272,6 +273,7 @@ offset_left = -8.0
 offset_top = -5.0
 offset_right = 359.0
 offset_bottom = 210.0
+mouse_filter = 1
 color = Color(0, 0.0588235, 0, 0.396078)
 
 [node name="64x64" type="Sprite2D" parent="."]
@@ -288,6 +290,7 @@ offset_right = 176.0
 offset_bottom = -65.0
 scale = Vector2(2.5, 2.5)
 pivot_offset = Vector2(0, 8)
+mouse_filter = 1
 
 [node name="8olametade0" type="Sprite2D" parent="bola"]
 texture = ExtResource("3_fp3mv")
@@ -302,6 +305,7 @@ modulate = Color(1, 1, 1, 0)
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="new_frog" type="Label" parent="labels"]
 unique_name_in_owner = true

@@ -20,6 +20,11 @@ const scene_paths = [
 const FROG_TEMPLATE_PATH = "res://resources/frog_resources/%s.tres"
 const FROG_LIST = ["frog_angel", "frog_demon", "frog_future", "frog_medieval", "frog_pieta", "frog_cheese", "frog_jfrog", "frog_chad", "frog_hfroger", "frog_gnome", "frog_autism", "frog_paradox", "frog_tan", "frog_ladybug", "frog_low_poly", "frog_sapone", "frog_lips", "frog_vga", "frog_french", "frog_war", "frog_rogue", "frog_alien", "frog_space", "frog_primitive", "frog_mage", "frog_greek", "frog_atom", "frog_sound", "frog_bread", "frog_grof", "frog_anime", "frog_abstract", "frog_pipa_l"]
 
+const GAME_WARNINGS = {
+	"NOT_ENOUGH_COINS" : "not_enough_money",
+	"CANT_SELL_LESS_ZERO" : "can_sell_less_zero"
+}
+
 const DEFAUT_START_PLAYER_MONEY = 10
 
 #win loose condition based on how much money you have

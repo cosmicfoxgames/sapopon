@@ -15,7 +15,7 @@ var is_hovering = false
 var frog_res : FrogTemplate
 
 func _ready() -> void:
-	pass # Replace with function body.
+	set_itself()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("game_click") and is_hovering == true:

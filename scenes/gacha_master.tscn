@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://pvg0w1f6cv0v"]
+[gd_scene load_steps=6 format=3 uid="uid://pvg0w1f6cv0v"]
 
 [ext_resource type="Script" path="res://scenes/gacha_master.gd" id="1_n2buy"]
-[ext_resource type="PackedScene" uid="uid://c072uq7qbyse6" path="res://scene objects/upper_ui_gacha.tscn" id="2_3osyx"]
 [ext_resource type="Texture2D" uid="uid://bb011tc5j1vjs" path="res://resources/graphics/windows/gacha.PNG" id="2_mh3jo"]
+[ext_resource type="Script" path="res://scene objects/upper_ui_gacha.gd" id="3_qx7fi"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="4_yfc0j"]
+[ext_resource type="PackedScene" uid="uid://bgg5woyjyfmwy" path="res://scene objects/gacha.tscn" id="5_cowh7"]
 
 [node name="gacha_master" type="Control"]
 layout_mode = 3
@@ -17,11 +19,42 @@ script = ExtResource("1_n2buy")
 position = Vector2(176, 93)
 texture = ExtResource("2_mh3jo")
 
-[node name="upper_ui_gacha" parent="." instance=ExtResource("2_3osyx")]
+[node name="upper_ui_gacha" type="Control" parent="."]
 unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
 offset_left = 2.0
 offset_top = -1.0
 offset_right = 42.0
 offset_bottom = 39.0
+script = ExtResource("3_qx7fi")
+metadata/_edit_vertical_guides_ = [290.0]
+
+[node name="label_moedas" type="Label" parent="upper_ui_gacha"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 22.0
+offset_top = 17.0
+offset_right = 148.0
+offset_bottom = 35.0
+theme = ExtResource("4_yfc0j")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "moedas"
+
+[node name="label_dias" type="Label" parent="upper_ui_gacha"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 21.0
+offset_right = 63.0
+offset_bottom = 44.0
+text = "dia"
+
+[node name="gacha" parent="upper_ui_gacha" instance=ExtResource("5_cowh7")]
+unique_name_in_owner = true
+position = Vector2(220, 98)
+scale = Vector2(0.9, 0.9)
 
 [connection signal="spin_gacha_signal" from="upper_ui_gacha" to="." method="_on_upper_ui_gacha_spin_gacha_signal"]
+[connection signal="got_new_frog" from="upper_ui_gacha/gacha" to="upper_ui_gacha" method="_on_gacha_got_new_frog"]

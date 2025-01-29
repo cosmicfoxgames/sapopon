@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cocpsaisvyjp8"]
+[gd_scene load_steps=9 format=3 uid="uid://cocpsaisvyjp8"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_xmmsf"]
 [ext_resource type="PackedScene" uid="uid://bwxblhr0sly7e" path="res://scene objects/game_button.tscn" id="2_lfjsf"]
+[ext_resource type="Texture2D" uid="uid://bra40v24bvx0d" path="res://resources/graphics/windows/log_in_screen.png" id="2_s7gmp"]
+[ext_resource type="PackedScene" uid="uid://bvkia36aegb3t" path="res://scene objects/icon_txt_button.tscn" id="4_6wvss"]
+[ext_resource type="Texture2D" uid="uid://dgnbq7wljheq6" path="res://resources/graphics/ui/frogos logo.png" id="5_buepg"]
+[ext_resource type="Texture2D" uid="uid://ddwgj7w0fc58s" path="res://resources/graphics/icons/team.png" id="5_s3gpp"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="6_hoog6"]
+[ext_resource type="Texture2D" uid="uid://c3rn5lks07u8i" path="res://resources/graphics/icons/manual.png" id="6_rwo16"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -23,12 +29,16 @@ offset_bottom = 205.0
 mouse_filter = 1
 color = Color(1, 0.717647, 0.862745, 1)
 
+[node name="LogInScreen" type="Sprite2D" parent="."]
+position = Vector2(176, 98)
+texture = ExtResource("2_s7gmp")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 144.0
-offset_top = 104.0
+offset_top = 106.0
 offset_right = 197.0
-offset_bottom = 183.0
+offset_bottom = 159.0
 theme_override_constants/separation = 15
 
 [node name="butt_log_in" parent="VBoxContainer" instance=ExtResource("2_lfjsf")]
@@ -38,6 +48,41 @@ button_txt = "log_in"
 [node name="butt_log_out" parent="VBoxContainer" instance=ExtResource("2_lfjsf")]
 layout_mode = 2
 button_txt = "log_out"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 113.0
+offset_right = 122.0
+offset_bottom = 177.0
+theme_override_constants/separation = 4
+alignment = 2
+metadata/_edit_group_ = true
+
+[node name="icon_txt_button" parent="VBoxContainer2" instance=ExtResource("4_6wvss")]
+layout_mode = 2
+icon_to_use = ExtResource("5_s3gpp")
+button_txt = "credits"
+
+[node name="icon_txt_button2" parent="VBoxContainer2" instance=ExtResource("4_6wvss")]
+layout_mode = 2
+icon_to_use = ExtResource("6_rwo16")
+button_txt = "manual"
+
+[node name="FrogosLogo" type="Sprite2D" parent="."]
+position = Vector2(170, 71)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_buepg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 166.0
+offset_right = 348.0
+offset_bottom = 178.0
+theme = ExtResource("6_hoog6")
+text = "version"
+horizontal_alignment = 2
 
 [connection signal="button_click" from="VBoxContainer/butt_log_in" to="." method="_on_butt_log_in_button_click"]
 [connection signal="button_click" from="VBoxContainer/butt_log_out" to="." method="_on_butt_log_out_button_click"]

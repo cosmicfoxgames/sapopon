@@ -9,6 +9,8 @@ extends Control
 func _ready() -> void:
 	on_first_start_game()
 	connect_all_signals()
+	
+	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["BOOTUP"]))
 
 func _process(delta: float) -> void:
 	pass

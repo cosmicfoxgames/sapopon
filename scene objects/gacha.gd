@@ -3,11 +3,13 @@ extends Node2D
 signal got_new_frog
 
 @onready var anim = %AnimationPlayer
+@onready var collision = %Area2D
 
 var is_hovering = false
 var can_interact = true
 
 func _ready() -> void:
+	print("ready do gacha")
 	anim.play("idle")
 
 func _process(delta: float) -> void:
@@ -21,25 +23,27 @@ func get_gacha():
 	anim.play("gacha")
 	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["GACHA_SPIN"]))
 	await anim.animation_finished
-	
-	if is_hovering == false:
-		anim.play("idle")
 	can_interact = true
+	
+	#if is_hovering == false:
+		#anim.play("idle")
 	
 	got_new_frog.emit()
 
 func no_money():
 	print("NO MONEY")
+	anim.play("no_money")
+	GlobalSignals.show_warning.emit(GameData.GAME_WARNINGS["NOT_ENOUGH_COINS"])
 
 #signals
 
 func _on_area_2d_mouse_entered() -> void:
+	is_hovering = true
 	anim.play("hover_in")
 	await anim.animation_finished
-	is_hovering = true
 
 func _on_area_2d_mouse_exited() -> void:
-	anim.play("hover_out")
 	is_hovering = false
+	anim.play("hover_out")
 	await anim.animation_finished
 	anim.play("idle")

@@ -9,3 +9,5 @@ signal got_new_frog(frog : FrogTemplate)
 signal play_music(which)
 signal stop_music()
 signal play_sfx(which)
+
+signal show_warning(warning : String)

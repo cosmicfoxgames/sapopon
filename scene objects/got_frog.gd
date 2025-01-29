@@ -21,6 +21,7 @@ func initiate_new_frog_anim(frog : FrogTemplate):
 	
 	anim.play("gacha_down")
 	await anim.animation_finished
+	GlobalSignals.play_sfx.emit(GameResources.get_random_frog_ribbit())
 	anim.play("frgo_wiggle")
 	
 	await get_tree().create_timer(1).timeout

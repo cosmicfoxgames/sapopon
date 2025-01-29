@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c5q0dvdeuoo1q"]
+[gd_scene load_steps=19 format=3 uid="uid://c5q0dvdeuoo1q"]
 
 [ext_resource type="Texture2D" uid="uid://bokj66ceagg1b" path="res://resources/graphics/ui/start_body.PNG" id="1_14meq"]
 [ext_resource type="Script" path="res://scenes/desktop_master.gd" id="1_vxdqc"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://35fox7or2yxn" path="res://scene objects/got_frog.tscn" id="11_f4118"]
 [ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="12_407c5"]
 [ext_resource type="PackedScene" uid="uid://bwxblhr0sly7e" path="res://scene objects/game_button.tscn" id="13_4yhrd"]
+[ext_resource type="PackedScene" uid="uid://b8lc5pfvm0sjn" path="res://scene objects/warning_bubble.tscn" id="14_ywqie"]
 
 [sub_resource type="Animation" id="Animation_bre8d"]
 length = 0.001
@@ -210,6 +211,12 @@ offset_top = 186.137
 offset_right = 105.529
 offset_bottom = 197.137
 button_txt = "next_day"
+
+[node name="warning bubble" parent="." instance=ExtResource("14_ywqie")]
+offset_left = 58.0
+offset_top = 26.0
+offset_right = 63.0
+offset_bottom = 31.0
 
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_gacha" to="." method="_on_button_gacha_clicked"]
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_collection" to="." method="_on_button_collection_clicked"]
