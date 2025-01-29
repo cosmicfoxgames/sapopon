@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp0my0a2yg22x"]
+
+[ext_resource type="Script" path="res://inbetween_master.gd" id="1_krdwr"]
+[ext_resource type="Texture2D" uid="uid://dujrf4ujvxuqc" path="res://resources/graphics/intro/xtra cards/card_thenextday.png" id="2_ttbme"]
+[ext_resource type="Texture2D" uid="uid://cw6kmd1ak01ol" path="res://resources/graphics/intro/xtra cards/card_badending.png" id="3_8xnnf"]
+[ext_resource type="Texture2D" uid="uid://dj0x84iqabcns" path="res://resources/graphics/intro/xtra cards/card_goodending.png" id="4_ki4gu"]
+
+[node name="inbetween_master" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_krdwr")
+next_day_card = ExtResource("2_ttbme")
+loose_card = ExtResource("3_8xnnf")
+win_card = ExtResource("4_ki4gu")
+
+[node name="card" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(176, 99)
+texture = ExtResource("2_ttbme")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true

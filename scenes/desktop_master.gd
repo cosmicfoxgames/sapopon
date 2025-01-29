@@ -44,6 +44,16 @@ func click(which):
 	anim.play("window_in")
 	await anim.animation_finished
 
+func advance_day():
+	print("veio pro advance day")
+	GameData.get_collection_value()
+	GameData.set_market_fluctuation_for_today()
+	PlayerData.currnt_day += 1
+	
+	Save.save_game()
+	
+	GlobalSignals.fade_scene.emit(load(GameData.scene_paths[GameData.SCENES.INBETWEEN_CARD]))
+
 #signals
 
 func _on_button_gacha_clicked(which: Variant) -> void:
@@ -58,3 +68,7 @@ func _on_get_new_frog(frog : FrogTemplate):
 	var new_frog_scene = got_frog_scene.instantiate()
 	add_child(new_frog_scene)
 	get_tree().paused = true
+
+#next day button
+func _on_game_button_button_click() -> void:
+	advance_day()

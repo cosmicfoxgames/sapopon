@@ -6,7 +6,7 @@ enum FROG_COLECTIONS {LUCKY, HARD, STYLISH, ADVENTURE, MYSTIC, MATERIALS}
 enum MARKET_FLUCTUATIONS {NEGATIVE, NEUTRAL, POSITIVE}
 enum FLUCTUATION_RATE {XTRA_BAD, BAD, GOOD, XTRA_GOOD}
 
-enum SCENES {GACHA_ROOM, MAIN_MENU, MARKET, COLLECTION, DESKTOP, INTRO}
+enum SCENES {GACHA_ROOM, MAIN_MENU, MARKET, COLLECTION, DESKTOP, INTRO, INBETWEEN_CARD}
 
 const scene_paths = [
 	"res://scenes/gacha_master.tscn",
@@ -14,7 +14,8 @@ const scene_paths = [
 	"res://scenes/market_master.tscn",
 	"res://scenes/collection_master.tscn",
 	"res://scenes/desktop_master.tscn",
-	"res://scenes/intro_master.tscn"
+	"res://scenes/intro_master.tscn",
+	"res://scenes/inbetween_master.tscn"
 ]
 
 const FROG_TEMPLATE_PATH = "res://resources/frog_resources/%s.tres"
@@ -28,7 +29,7 @@ const GAME_WARNINGS = {
 const DEFAUT_START_PLAYER_MONEY = 10
 
 #win loose condition based on how much money you have
-const LOOSE_CONDITION = -30
+const LOOSE_CONDITION = -100
 const WIN_CONDITION = 1000000
 
 var is_firt_time = true

@@ -15,7 +15,7 @@ func set_warning(warning : String):
 	label.text = warning
 	anim.play("in")
 	await anim.animation_finished
-	timer.start(3)
+	timer.start(6)
 	anim.play("out")
 
 #signals

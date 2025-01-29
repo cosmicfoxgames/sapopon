@@ -39,7 +39,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.11, 0.11)]
 }
 
 [sub_resource type="Animation" id="Animation_02b60"]
@@ -108,6 +108,7 @@ _data = {
 }
 
 [node name="desktop_master" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,6 +140,7 @@ offset_left = 59.0
 offset_top = 3.0
 offset_right = 59.0
 offset_bottom = 3.0
+scale = Vector2(0.11, 0.11)
 pivot_offset = Vector2(0, 352)
 mouse_filter = 1
 metadata/_edit_group_ = true
@@ -221,3 +223,4 @@ offset_bottom = 31.0
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_gacha" to="." method="_on_button_gacha_clicked"]
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_collection" to="." method="_on_button_collection_clicked"]
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_market" to="." method="_on_button_market_clicked"]
+[connection signal="button_click" from="game_button" to="." method="_on_game_button_button_click"]

@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("game_enter") and ready_to_start == true:
-		GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]))
+		GlobalSignals.fade_scene.emit(load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]))
 
 func start_game_intro():
 	anim.play("splash")

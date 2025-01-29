@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_butt_log_in_button_click() -> void:
 	GameData.start_fresh_game()
-	GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.DESKTOP]))
+	GlobalSignals.fade_scene.emit(load(GameData.scene_paths[GameData.SCENES.DESKTOP]))
 func _on_butt_log_out_button_click() -> void:
 	get_tree().quit()
