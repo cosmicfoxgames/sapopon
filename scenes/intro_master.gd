@@ -3,6 +3,7 @@ extends Control
 @onready var cutscene = %cutscene
 @onready var anim = %AnimationPlayer
 @onready var tile = %start_game
+@onready var timer = %Timer
 
 var ready_to_start = false
 
@@ -19,18 +20,31 @@ func start_game_intro():
 	
 	if GameData.is_firt_time == true:
 		print("is player_first time")
-		GlobalSignals.play_music.emit(GameResources.get_resource(GameResources.MUSICS["INTRO"]))
-		cutscene.visible = true
-		cutscene.play_cutsene()
-		await cutscene.finished_cutscene
-		cutscene.visible = false
-		GlobalSignals.stop_music.emit()
-		GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["IMPACT"]))
-	
+		play_intro_cutscene()
+	else: cue_title()
+
+func cue_title():
 	tile.visible = true
 	tile.start_title_screen()
+	timer.start()
+
+func play_intro_cutscene():
+	GlobalSignals.play_music.emit(GameResources.get_resource(GameResources.MUSICS["INTRO"]))
+	ready_to_start = false
+	tile.visible = false
+	cutscene.visible = true
+	cutscene.play_cutsene()
+	await cutscene.finished_cutscene
+	cutscene.visible = false
+	GlobalSignals.stop_music.emit()
+	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["IMPACT"]))
+	cue_title()
 
 #signals
 
 func _on_start_game_finished_title_animation_in() -> void:
 	ready_to_start = true
+
+#title wait time timer
+func _on_timer_timeout() -> void:
+	play_intro_cutscene()

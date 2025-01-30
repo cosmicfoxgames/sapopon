@@ -72,3 +72,8 @@ func _on_get_new_frog(frog : FrogTemplate):
 #next day button
 func _on_game_button_button_click() -> void:
 	advance_day()
+
+#back to main menu button
+func _on_game_button_2_button_click() -> void:
+	Save.save_game()
+	GlobalSignals.fade_scene.emit(load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]))

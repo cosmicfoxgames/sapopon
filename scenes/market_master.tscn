@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7v8h1e4gq75d"]
+[gd_scene load_steps=9 format=3 uid="uid://b7v8h1e4gq75d"]
 
 [ext_resource type="Script" path="res://scenes/market_master.gd" id="1_hqx83"]
 [ext_resource type="Texture2D" uid="uid://dabn6ihit7217" path="res://resources/graphics/windows/BGBG.PNG" id="2_t2284"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dh700n3mbnd8w" path="res://scene objects/market_bar.tscn" id="4_xclom"]
 [ext_resource type="PackedScene" uid="uid://bwxblhr0sly7e" path="res://scene objects/game_button.tscn" id="6_6vxdy"]
 [ext_resource type="PackedScene" uid="uid://bvkia36aegb3t" path="res://scene objects/icon_txt_button.tscn" id="7_th85o"]
+[ext_resource type="Texture2D" uid="uid://c48rw7dukpgbq" path="res://resources/graphics/icons/coin.png" id="8_grdqn"]
 
 [node name="market_master" type="Control"]
 layout_mode = 3
@@ -65,13 +66,13 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_left = 232.0
 offset_top = 133.0
-offset_right = 295.0
+offset_right = 274.0
 offset_bottom = 155.0
 theme = ExtResource("4_evrr8")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "000"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="upper_ui_market"]
@@ -121,6 +122,7 @@ offset_left = 127.0
 offset_top = 147.0
 offset_right = 231.0
 offset_bottom = 177.0
+theme = ExtResource("4_evrr8")
 
 [node name="to_sell_buttons" type="VBoxContainer" parent="upper_ui_market/ScrollContainer"]
 unique_name_in_owner = true
@@ -137,6 +139,7 @@ offset_left = 128.0
 offset_top = 31.0
 offset_right = 244.0
 offset_bottom = 130.0
+theme = ExtResource("4_evrr8")
 
 [node name="collection_buttons" type="VBoxContainer" parent="upper_ui_market/ScrollContainer2"]
 unique_name_in_owner = true
@@ -145,5 +148,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 5
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(282, 153)
+texture = ExtResource("8_grdqn")
 
 [connection signal="button_click" from="upper_ui_market/game_button" to="upper_ui_market" method="_on_game_button_button_click"]

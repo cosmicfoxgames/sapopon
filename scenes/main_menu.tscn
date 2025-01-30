@@ -39,7 +39,7 @@ offset_left = 144.0
 offset_top = 106.0
 offset_right = 197.0
 offset_bottom = 159.0
-theme_override_constants/separation = 15
+theme_override_constants/separation = 5
 
 [node name="butt_log_in" parent="VBoxContainer" instance=ExtResource("2_lfjsf")]
 layout_mode = 2
@@ -47,7 +47,7 @@ button_txt = "log_in"
 
 [node name="butt_log_out" parent="VBoxContainer" instance=ExtResource("2_lfjsf")]
 layout_mode = 2
-button_txt = "log_out"
+button_txt = "shot_down"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -70,11 +70,12 @@ icon_to_use = ExtResource("6_rwo16")
 button_txt = "manual"
 
 [node name="FrogosLogo" type="Sprite2D" parent="."]
-position = Vector2(170, 71)
-scale = Vector2(2.5, 2.5)
+position = Vector2(170, 82)
+scale = Vector2(2, 2)
 texture = ExtResource("5_buepg")
 
-[node name="Label" type="Label" parent="."]
+[node name="version" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 283.0
 offset_top = 166.0

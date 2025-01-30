@@ -55,7 +55,7 @@ offset_top = 33.0
 offset_right = 57.0
 offset_bottom = 44.0
 mouse_filter = 1
-color = Color(0.93, 0.851415, 0.5673, 1)
+color = Color(1, 0.956863, 0.662745, 1)
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="label/ColorRect"]

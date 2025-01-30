@@ -104,4 +104,10 @@ libraries = {
 "": SubResource("AnimationLibrary_gdvnx")
 }
 
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 102.0
+one_shot = true
+
 [connection signal="finished_title_animation_in" from="start_game" to="." method="_on_start_game_finished_title_animation_in"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

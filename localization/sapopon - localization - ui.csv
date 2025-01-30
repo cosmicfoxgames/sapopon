@@ -4,12 +4,13 @@ game_name,Sapopon,Sapopon: Non-fungible Toads
 frogos,FrogOs,FrogOs
 press_enter,Pressione ENTER para começar,Press ENTER to start
 log_in,Entrar,Log in
+shot_down,Desligar,Shut Down
 log_out,Sair,Log out
 credits,Créditos,Credits
 manual,Manual,Manual
 back,Voltar,Back
-next_day,Prox. Dia,Next Day
-day,Dia %s,Dia %s
+next_day,Próx. Dia,Next Day
+day,Dia %s,Day %s
 gacha,Sapopon,Sapopon
 your_coins,Você tem %s moedas,You have %s coins
 got_new_frog,Você conseguiu um novo sapo!,You've got a new frog!
@@ -17,13 +18,13 @@ not_enough_money,Você não tem moedas o suficiente pra isso!,You don't have eno
 collection,Coleção,Collection
 collection_value,A sua coleção vale %s moedas hoje,Your collection is worth %s coins today
 coin,Moedas,Coins
-frog_collection,COLEÇÂO,COLLECTION
+frog_collection,COLEÇÃO,COLLECTION
 frog_rarity,RARIDADE,RARITY
 frog_today_value,PREÇO HOJE,PRICE TODAY
 market,Mercado,Market
-today_fluctuation,Valores de mercado hoje,Maket values today
+today_fluctuation,Cotações de hoje,Today's rates
 your_collection,Sua coleção de Sapopons,Your Sapopon collection
-to_sell,Sapopons para venda,Sapopons to sell
-can_sell_less_zero,Você não pode vender por menos de 0 moedas!,You can't sell for less than 0 coins!
+to_sell,À venda,Sapopons to sell
+can_sell_less_zero,Você não pode vender por menos de 0 moedas!,You can't sell at less than 0 coins!
 sell,Vender,Sell
 frog,Sapo,Frog

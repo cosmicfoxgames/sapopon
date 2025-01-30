@@ -25,17 +25,20 @@ func set_button():
 	if icon != null: show_icon.texture = icon
 
 func on_click():
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)
 	clicked.emit(label)
 	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["BUBBLE_CLICK"]))
 
 #signals
 
 func _on_area_2d_mouse_entered() -> void:
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.HAND)
 	is_hovering = true
 	anim.play("in")
 	await anim.animation_finished
 
 func _on_area_2d_mouse_exited() -> void:
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)
 	is_hovering = false
 	anim.play("out")
 

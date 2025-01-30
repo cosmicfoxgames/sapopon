@@ -161,7 +161,7 @@ position = Vector2(27, 50)
 texture = ExtResource("2_msfkr")
 
 [node name="Barra" type="Sprite2D" parent="."]
-position = Vector2(176, 192)
+position = Vector2(176, 191.5)
 texture = ExtResource("2_j7xjx")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -194,9 +194,9 @@ icon = ExtResource("7_lrdsq")
 [node name="days_label" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 299.0
+offset_left = 301.0
 offset_top = 186.0
-offset_right = 343.0
+offset_right = 345.0
 offset_bottom = 197.0
 theme = ExtResource("12_407c5")
 text = "Dia 001"
@@ -207,20 +207,30 @@ libraries = {
 "": SubResource("AnimationLibrary_y7tec")
 }
 
-[node name="game_button" parent="." instance=ExtResource("13_4yhrd")]
-offset_left = 52.5293
-offset_top = 186.137
-offset_right = 105.529
-offset_bottom = 197.137
-button_txt = "next_day"
-
 [node name="warning bubble" parent="." instance=ExtResource("14_ywqie")]
 offset_left = 58.0
 offset_top = 26.0
 offset_right = 63.0
 offset_bottom = 31.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 185.5
+offset_right = 160.0
+offset_bottom = 196.5
+metadata/_edit_group_ = true
+
+[node name="game_button" parent="HBoxContainer" instance=ExtResource("13_4yhrd")]
+layout_mode = 2
+button_txt = "next_day"
+
+[node name="game_button2" parent="HBoxContainer" instance=ExtResource("13_4yhrd")]
+layout_mode = 2
+button_txt = "log_out"
+
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_gacha" to="." method="_on_button_gacha_clicked"]
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_collection" to="." method="_on_button_collection_clicked"]
 [connection signal="clicked" from="CenterContainer/VBoxContainer/button_market" to="." method="_on_button_market_clicked"]
-[connection signal="button_click" from="game_button" to="." method="_on_game_button_button_click"]
+[connection signal="button_click" from="HBoxContainer/game_button" to="." method="_on_game_button_button_click"]
+[connection signal="button_click" from="HBoxContainer/game_button2" to="." method="_on_game_button_2_button_click"]

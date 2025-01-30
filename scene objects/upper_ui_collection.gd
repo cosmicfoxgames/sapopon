@@ -37,9 +37,16 @@ func _on_frog_icon_clicked(frog : String):
 	frog_info.set_frog(load(GameData.FROG_TEMPLATE_PATH % frog))
 	anim.play("window_in")
 	await anim.animation_finished
-	#grid.visible = false
+	grid.visible = false
 
 #back from frog info window
 func _on_frog_info_frame_back_click() -> void:
-	#grid.visible = true
+	grid.visible = true
 	anim.play("window_out")
+
+#teste do entarr sair dos sliders
+
+func _on_scroll_container_focus_entered() -> void:
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.HAND)
+func _on_scroll_container_focus_exited() -> void:
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)

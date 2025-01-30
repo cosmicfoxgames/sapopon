@@ -8,6 +8,10 @@ enum FLUCTUATION_RATE {XTRA_BAD, BAD, GOOD, XTRA_GOOD}
 
 enum SCENES {GACHA_ROOM, MAIN_MENU, MARKET, COLLECTION, DESKTOP, INTRO, INBETWEEN_CARD}
 
+enum MOUSE_POINTERS {POINTER, HAND}
+
+const game_version = "v0.2"
+
 const scene_paths = [
 	"res://scenes/gacha_master.tscn",
 	"res://scenes/main_menu.tscn",
@@ -159,3 +163,6 @@ func start_fresh_game():
 	
 	GameData.is_firt_time = false
 	Save.save_game()
+
+func change_mouse_pointer(which : MOUSE_POINTERS):
+	Input.set_custom_mouse_cursor(GameResources.get_resource(GameResources.CURSORS_GRAPHICS[MOUSE_POINTERS.keys()[which]]))

@@ -32,6 +32,7 @@ func set_frog(frog : FrogTemplate):
 	label.add_theme_color_override("font_color", Color.WHITE)
 
 func click():
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)
 	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["DAMP_CLICK"]))
 	button_click.emit(self)
 
@@ -40,6 +41,8 @@ func click():
 func _on_area_2d_mouse_entered() -> void:
 	texture.texture = pressed_button_texture
 	is_hovering = true
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.HAND)
 func _on_area_2d_mouse_exited() -> void:
 	texture.texture = default_button_texture
 	is_hovering = false
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)

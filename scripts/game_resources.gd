@@ -8,6 +8,11 @@ const MUSICS = {
 	"MARKET" : "res://resources/musics/Bolsa de Valores.mp3"
 }
 
+const CURSORS_GRAPHICS = {
+	"POINTER" : "res://resources/graphics/ui/cursor/pointer.png",
+	"HAND" : "res://resources/graphics/ui/cursor/hand.png"
+}
+
 const SFX = {
 	"BOOTUP" : "res://resources/sfx/frogbootup.mp3",
 	"GACHA_SPIN" : "res://resources/sfx/gachabuy.mp3",

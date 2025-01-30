@@ -27,6 +27,7 @@ func set_button():
 	label.text = button_txt
 
 func click_button():
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)
 	texture.texture = down_button_texture
 	label.add_theme_color_override("font_color", down_txt_color)
 	button_click.emit()
@@ -41,6 +42,8 @@ func click_button():
 func _on_area_2d_mouse_entered() -> void:
 	is_hovering = true
 	label.add_theme_color_override("font_color", hover_txt_color)
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.HAND)
 func _on_area_2d_mouse_exited() -> void:
 	is_hovering = false
 	label.remove_theme_color_override("font_color")
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)

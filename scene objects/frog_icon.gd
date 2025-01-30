@@ -21,6 +21,7 @@ func set_itself(frog : FrogTemplate):
 	sapo_img.modulate = GameResources.FROG_COLLECTIONS_COLORS[GameData.FROG_COLECTIONS.keys()[frog.colection]]
 
 func click():
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)
 	GlobalSignals.frog_icon_click.emit(label.text)
 	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["DAMP_CLICK"]))
 
@@ -29,6 +30,8 @@ func click():
 func _on_area_2d_mouse_entered() -> void:
 	texture.texture = pressed_border_texture
 	is_hovering = true
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.HAND)
 func _on_area_2d_mouse_exited() -> void:
 	texture.texture = default_border_texture
 	is_hovering = false
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)

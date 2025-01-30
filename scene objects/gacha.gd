@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("game_click") and is_hovering == true and can_interact == true:
+		GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)
 		if PlayerData.current_money > 0:
 			get_gacha()
 		else: no_money()
@@ -38,11 +39,13 @@ func no_money():
 #signals
 
 func _on_area_2d_mouse_entered() -> void:
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.HAND)
 	is_hovering = true
 	anim.play("hover_in")
 	await anim.animation_finished
 
 func _on_area_2d_mouse_exited() -> void:
+	GameData.change_mouse_pointer(GameData.MOUSE_POINTERS.POINTER)
 	is_hovering = false
 	anim.play("hover_out")
 	await anim.animation_finished
