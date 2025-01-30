@@ -9,6 +9,7 @@
 size = Vector2(53, 11)
 
 [node name="game_button" type="Control"]
+custom_minimum_size = Vector2(53, 11)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 53.0

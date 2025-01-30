@@ -3,11 +3,14 @@ extends Control
 @onready var valor_colec = %Label2
 @onready var colec = %Label
 @onready var grid = %GridContainer
+@onready var anim = %AnimationPlayer
+@onready var frog_info = %frog_info_frame
 
 @export var frog_icon : PackedScene
 
 func _ready() -> void:
 	set_frog_grid()
+	GlobalSignals.frog_icon_click.connect(_on_frog_icon_clicked)
 
 func _process(delta: float) -> void:
 	pass
@@ -29,5 +32,14 @@ func set_ui():
 
 #signals
 
-func _on_button_button_down() -> void:
-	GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.GACHA_ROOM]))
+func _on_frog_icon_clicked(frog : String):
+	print("veio pro on frog clicked")
+	frog_info.set_frog(load(GameData.FROG_TEMPLATE_PATH % frog))
+	anim.play("window_in")
+	await anim.animation_finished
+	#grid.visible = false
+
+#back from frog info window
+func _on_frog_info_frame_back_click() -> void:
+	#grid.visible = true
+	anim.play("window_out")

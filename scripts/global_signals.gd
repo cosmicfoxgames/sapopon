@@ -12,3 +12,4 @@ signal stop_music()
 signal play_sfx(which)
 
 signal show_warning(warning : String)
+signal frog_icon_click(frog)

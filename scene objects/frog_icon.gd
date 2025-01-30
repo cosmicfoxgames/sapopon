@@ -1,7 +1,5 @@
 extends Control
 
-signal frog_icon_click
-
 @onready var sapo_img = %Sapo
 @onready var label = %Label
 @onready var texture = %NinePatchRect
@@ -23,7 +21,7 @@ func set_itself(frog : FrogTemplate):
 	sapo_img.modulate = GameResources.FROG_COLLECTIONS_COLORS[GameData.FROG_COLECTIONS.keys()[frog.colection]]
 
 func click():
-	frog_icon_click.emit()
+	GlobalSignals.frog_icon_click.emit(label.text)
 	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["DAMP_CLICK"]))
 
 #signals

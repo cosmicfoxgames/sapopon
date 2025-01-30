@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://rneypuvgs1i3"]
+
+[ext_resource type="Script" path="res://scene objects/frog_info_frame.gd" id="1_3muuq"]
+[ext_resource type="Texture2D" uid="uid://bto1qh0c100th" path="res://resources/graphics/ui/window_border.png" id="1_4qh08"]
+[ext_resource type="Texture2D" uid="uid://8mgflsgjcajc" path="res://resources/placeholders/64x64.png" id="2_ffniw"]
+[ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="3_7qnam"]
+[ext_resource type="PackedScene" uid="uid://bwxblhr0sly7e" path="res://scene objects/game_button.tscn" id="4_1k5bo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvx88"]
+size = Vector2(308, 192)
+
+[node name="frog_info_frame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("1_3muuq")
+
+[node name="Area2D" type="Area2D" parent="."]
+priority = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(154, 96)
+shape = SubResource("RectangleShape2D_tvx88")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 149.0
+offset_bottom = 155.0
+texture = ExtResource("1_4qh08")
+patch_margin_left = 6
+patch_margin_top = 10
+patch_margin_right = 27
+patch_margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 149.0
+offset_bottom = 157.0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="frog_img" type="Sprite2D" parent="VBoxContainer/CenterContainer/Control"]
+unique_name_in_owner = true
+position = Vector2(32, 32)
+texture = ExtResource("2_ffniw")
+
+[node name="frog_name" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_7qnam")
+text = "frogname"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/v_separation = -2
+columns = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_7qnam")
+text = "frog_collection"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_7qnam")
+text = "frog_rarity"
+horizontal_alignment = 1
+
+[node name="frog_collection" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_7qnam")
+text = "collection"
+horizontal_alignment = 1
+
+[node name="frog_rarity" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_7qnam")
+text = "rarity"
+horizontal_alignment = 1
+
+[node name="value_today" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_7qnam")
+text = "your frog valueus XXXtoday"
+horizontal_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="game_button" parent="VBoxContainer/CenterContainer2" instance=ExtResource("4_1k5bo")]
+layout_mode = 2
+button_txt = "back"
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="button_click" from="VBoxContainer/CenterContainer2/game_button" to="." method="_on_game_button_button_click"]

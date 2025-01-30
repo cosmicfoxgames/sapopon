@@ -1,10 +1,103 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx48mcpo7mrfj"]
+[gd_scene load_steps=11 format=3 uid="uid://dx48mcpo7mrfj"]
 
 [ext_resource type="Script" path="res://scenes/collection_master.gd" id="1_wqs75"]
 [ext_resource type="Texture2D" uid="uid://cbivx2ugvm2fm" path="res://resources/graphics/windows/colecao.PNG" id="2_wgxc4"]
 [ext_resource type="Script" path="res://scene objects/upper_ui_collection.gd" id="3_k2wrw"]
 [ext_resource type="PackedScene" uid="uid://dj56ookaya5wy" path="res://scene objects/frog_icon.tscn" id="4_4f3ao"]
 [ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="5_0u83y"]
+[ext_resource type="PackedScene" uid="uid://rneypuvgs1i3" path="res://scene objects/frog_info_frame.tscn" id="6_kt3im"]
+
+[sub_resource type="Animation" id="Animation_g3hdg"]
+resource_name = "window_in"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frog_info_frame:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(6, -127), Vector2(70, 27), Vector2(60, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frog_info_frame:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.11, 0.11), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5ufo1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frog_info_frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(60, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frog_info_frame:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.11, 0.11)]
+}
+
+[sub_resource type="Animation" id="Animation_l7g8w"]
+resource_name = "window_out"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frog_info_frame:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(60, 17), Vector2(70, 27), Vector2(6, -127)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frog_info_frame:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(0.11, 0.11)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5cw4p"]
+_data = {
+"RESET": SubResource("Animation_5ufo1"),
+"window_in": SubResource("Animation_g3hdg"),
+"window_out": SubResource("Animation_l7g8w")
+}
 
 [node name="collection_master" type="Control"]
 layout_mode = 3
@@ -57,10 +150,11 @@ text = "valor da colecao"
 [node name="ScrollContainer" type="ScrollContainer" parent="upper_ui_collection"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 59.0
+offset_left = 63.0
 offset_top = 63.0
-offset_right = 285.0
+offset_right = 289.0
 offset_bottom = 181.0
+metadata/_edit_group_ = true
 
 [node name="GridContainer" type="GridContainer" parent="upper_ui_collection/ScrollContainer"]
 unique_name_in_owner = true
@@ -70,3 +164,20 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 12
 columns = 3
+
+[node name="frog_info_frame" parent="." instance=ExtResource("6_kt3im")]
+unique_name_in_owner = true
+offset_left = 60.0
+offset_top = 17.0
+offset_right = 100.0
+offset_bottom = 57.0
+scale = Vector2(0.11, 0.11)
+pivot_offset = Vector2(0, 352)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_5cw4p")
+}
+
+[connection signal="back_click" from="frog_info_frame" to="upper_ui_collection" method="_on_frog_info_frame_back_click"]
