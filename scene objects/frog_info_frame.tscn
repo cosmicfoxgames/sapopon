@@ -86,11 +86,12 @@ theme = ExtResource("3_7qnam")
 text = "frog_collection"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer3/HBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="frog_collection" type="Label" parent="VBoxContainer3/HBoxContainer2/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_7qnam")
-text = "frog_rarity"
+text = "collection"
 horizontal_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer3/HBoxContainer2/VBoxContainer/HBoxContainer"]
@@ -98,12 +99,11 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="frog_collection" type="Label" parent="VBoxContainer3/HBoxContainer2/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
+[node name="Label2" type="Label" parent="VBoxContainer3/HBoxContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_7qnam")
-text = "collection"
+text = "frog_rarity"
 horizontal_alignment = 1
 
 [node name="frog_rarity" type="Label" parent="VBoxContainer3/HBoxContainer2/VBoxContainer/HBoxContainer"]

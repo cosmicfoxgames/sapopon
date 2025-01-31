@@ -17,7 +17,7 @@ config/name_localized={
 run/main_scene="res://scenes/game_master.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/show_image=false
+boot_splash/image="res://resources/graphics/windows/full black.png"
 config/icon="res://icon.svg"
 
 [autoload]

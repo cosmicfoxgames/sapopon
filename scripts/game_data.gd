@@ -1,6 +1,6 @@
 extends Node
 
-var full_version = [0, 0, 0]
+var full_version = [0, 2, 0]
 
 enum FROG_COLECTIONS {LUCKY, HARD, STYLISH, ADVENTURE, MYSTIC, MATERIALS}
 enum MARKET_FLUCTUATIONS {NEGATIVE, NEUTRAL, POSITIVE}
@@ -37,6 +37,7 @@ const LOOSE_CONDITION = -100
 const WIN_CONDITION = 1000000
 
 var is_firt_time = true
+var already_won_game = false
 var most_recent_frog : FrogTemplate
 
 func get_all_frog_templates(list = FROG_LIST):
@@ -161,8 +162,17 @@ func start_fresh_game():
 	PlayerData.currnt_day = 1
 	PlayerData.current_collection = []
 	
-	GameData.is_firt_time = false
+	is_firt_time = false
+	already_won_game = false
 	Save.save_game()
 
 func change_mouse_pointer(which : MOUSE_POINTERS):
 	Input.set_custom_mouse_cursor(GameResources.get_resource(GameResources.CURSORS_GRAPHICS[MOUSE_POINTERS.keys()[which]]))
+
+func loose_game():
+	print("YOU LOSE")
+	start_fresh_game()
+
+func win_game():
+	print("YOU WON")
+	already_won_game = true

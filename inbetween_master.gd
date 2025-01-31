@@ -23,9 +23,11 @@ func _process(delta: float) -> void:
 func decide_what_to_do():
 	var where_to_go_next
 	if player_full_money < GameData.LOOSE_CONDITION:
+		GameData.loose_game()
 		card.texture = loose_card
 		where_to_go_next = load(GameData.scene_paths[GameData.SCENES.INTRO])
-	elif player_full_money >= GameData.WIN_CONDITION:
+	elif player_full_money >= GameData.WIN_CONDITION and GameData.already_won_game == false:
+		GameData.win_game()
 		card.texture = loose_card
 		where_to_go_next = load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]) #trocar pra creditos depois
 	else:

@@ -141,10 +141,10 @@ text = "coleção"
 [node name="Label2" type="Label" parent="upper_ui_collection"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 75.0
+offset_left = 77.0
 offset_top = 42.0
-offset_right = 287.0
-offset_bottom = 56.0
+offset_right = 289.0
+offset_bottom = 57.0
 mouse_filter = 1
 theme = ExtResource("5_0u83y")
 text = "valor da colecao"
