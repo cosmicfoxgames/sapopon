@@ -164,29 +164,28 @@ texture = ExtResource("2_msfkr")
 position = Vector2(176, 191.5)
 texture = ExtResource("2_j7xjx")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_top = 34.0
-offset_right = 50.0
-offset_bottom = 175.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 48
+offset_left = 10.0
+offset_top = 44.0
+offset_right = 42.0
+offset_bottom = 136.0
+mouse_filter = 2
+theme_override_constants/separation = 16
 alignment = 2
 metadata/_edit_group_ = true
 
-[node name="button_gacha" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_6rynu")]
+[node name="button_gacha" parent="VBoxContainer" instance=ExtResource("3_6rynu")]
 layout_mode = 2
 label = "gacha"
 icon = ExtResource("5_j5soa")
 
-[node name="button_collection" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_6rynu")]
+[node name="button_collection" parent="VBoxContainer" instance=ExtResource("3_6rynu")]
 layout_mode = 2
 label = "collection"
 icon = ExtResource("6_08typ")
 
-[node name="button_market" parent="CenterContainer/VBoxContainer" instance=ExtResource("3_6rynu")]
+[node name="button_market" parent="VBoxContainer" instance=ExtResource("3_6rynu")]
 layout_mode = 2
 label = "market"
 icon = ExtResource("7_lrdsq")
@@ -198,6 +197,7 @@ offset_left = 301.0
 offset_top = 186.0
 offset_right = 345.0
 offset_bottom = 197.0
+mouse_filter = 1
 theme = ExtResource("12_407c5")
 text = "Dia 001"
 
@@ -212,6 +212,7 @@ offset_left = 58.0
 offset_top = 26.0
 offset_right = 63.0
 offset_bottom = 31.0
+mouse_filter = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -229,8 +230,8 @@ button_txt = "next_day"
 layout_mode = 2
 button_txt = "log_out"
 
-[connection signal="clicked" from="CenterContainer/VBoxContainer/button_gacha" to="." method="_on_button_gacha_clicked"]
-[connection signal="clicked" from="CenterContainer/VBoxContainer/button_collection" to="." method="_on_button_collection_clicked"]
-[connection signal="clicked" from="CenterContainer/VBoxContainer/button_market" to="." method="_on_button_market_clicked"]
+[connection signal="clicked" from="VBoxContainer/button_gacha" to="." method="_on_button_gacha_clicked"]
+[connection signal="clicked" from="VBoxContainer/button_collection" to="." method="_on_button_collection_clicked"]
+[connection signal="clicked" from="VBoxContainer/button_market" to="." method="_on_button_market_clicked"]
 [connection signal="button_click" from="HBoxContainer/game_button" to="." method="_on_game_button_button_click"]
 [connection signal="button_click" from="HBoxContainer/game_button2" to="." method="_on_game_button_2_button_click"]

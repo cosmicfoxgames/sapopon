@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("label:modulate")
+tracks/1/path = NodePath("label lael/label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -36,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("label:position")
+tracks/2/path = NodePath("label lael/label:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -124,7 +124,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("label:modulate")
+tracks/1/path = NodePath("label lael/label:modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -136,7 +136,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("label:position")
+tracks/2/path = NodePath("label lael/label:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -177,7 +177,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("label:modulate")
+tracks/1/path = NodePath("label lael/label:modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -189,7 +189,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("label:position")
+tracks/2/path = NodePath("label lael/label:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -221,15 +221,18 @@ _data = {
 }
 
 [node name="button_w_label" type="Control"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 32.0
+offset_bottom = 32.0
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 script = ExtResource("1_wucku")
 
 [node name="icon" type="Node2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(16, 16)
 
 [node name="Icon" type="Sprite2D" parent="icon"]
 unique_name_in_owner = true
@@ -240,13 +243,28 @@ texture = ExtResource("2_wh5uw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="icon/Area2D"]
 shape = SubResource("RectangleShape2D_xps0d")
 
-[node name="label" type="Control" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_45e81")
+}
+
+[node name="label lael" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 44.0
+offset_bottom = 47.0
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="label" type="Control" parent="label lael"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 0
-mouse_filter = 1
+mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="label"]
+[node name="ColorRect" type="ColorRect" parent="label lael/label"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -28.0
@@ -257,7 +275,7 @@ mouse_filter = 1
 color = Color(1, 0.956863, 0.662745, 1)
 metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="label/ColorRect"]
+[node name="Label" type="Label" parent="label lael/label/ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 56.0
@@ -267,12 +285,6 @@ theme = ExtResource("3_ets0w")
 text = "buttonB"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_45e81")
-}
 
 [connection signal="mouse_entered" from="icon/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="icon/Area2D" to="." method="_on_area_2d_mouse_exited"]

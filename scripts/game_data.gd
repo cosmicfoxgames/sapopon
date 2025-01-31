@@ -166,8 +166,8 @@ func start_fresh_game():
 	already_won_game = false
 	Save.save_game()
 
-func change_mouse_pointer(which : MOUSE_POINTERS):
-	Input.set_custom_mouse_cursor(GameResources.get_resource(GameResources.CURSORS_GRAPHICS[MOUSE_POINTERS.keys()[which]]))
+#func change_mouse_pointer(which : MOUSE_POINTERS):
+	#Input.set_custom_mouse_cursor(GameResources.get_resource(GameResources.CURSORS_GRAPHICS[MOUSE_POINTERS.keys()[which]]))
 
 func loose_game():
 	print("YOU LOSE")

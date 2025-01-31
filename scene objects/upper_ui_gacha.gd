@@ -60,5 +60,5 @@ func _on_button_2_button_down() -> void:
 	GlobalSignals.advance_day.emit()
 
 #spinned gacha
-func _on_gacha_got_new_frog() -> void:
+func _on_control_gacha_gacha_got_new_frog() -> void:
 	spin_gacha()

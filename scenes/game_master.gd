@@ -11,6 +11,7 @@ func _ready() -> void:
 	Save.load_game()
 	handle_changing_scene(load(GameData.scene_paths[GameData.SCENES.INTRO]))
 	conect_all_signals()
+	set_custom_mouse_graphics()
 	GameResources.populate_frogs_by_raritie()
 
 func _process(delta: float) -> void:
@@ -24,6 +25,10 @@ func conect_all_signals():
 	GlobalSignals.play_sfx.connect(_on_play_sfx)
 	
 	GlobalSignals.stop_music.connect(_on_stop_music)
+
+func set_custom_mouse_graphics():
+	Input.set_custom_mouse_cursor(GameResources.get_resource(GameResources.CURSORS_GRAPHICS["POINTER"]))
+	Input.set_custom_mouse_cursor(GameResources.get_resource(GameResources.CURSORS_GRAPHICS["HAND"]), Input.CURSOR_POINTING_HAND)
 
 func handle_changing_scene(scene_to_go : PackedScene):
 	for i in all_scenes.get_children():

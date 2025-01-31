@@ -15,6 +15,7 @@ anchors_preset = 0
 offset_right = 53.0
 offset_bottom = 11.0
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 script = ExtResource("1_f0bti")
 button_txt = "test button"
 hover_txt_color = Color(0.25098, 0.631373, 0.294118, 1)

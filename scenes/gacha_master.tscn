@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bb011tc5j1vjs" path="res://resources/graphics/windows/gacha.PNG" id="2_mh3jo"]
 [ext_resource type="Script" path="res://scene objects/upper_ui_gacha.gd" id="3_qx7fi"]
 [ext_resource type="Theme" uid="uid://bascc1vb042uq" path="res://resources/ui_theme.tres" id="4_yfc0j"]
-[ext_resource type="PackedScene" uid="uid://bgg5woyjyfmwy" path="res://scene objects/gacha.tscn" id="5_cowh7"]
+[ext_resource type="PackedScene" uid="uid://dbmbokk2vcoma" path="res://scene objects/control_gacha.tscn" id="6_66kpv"]
 [ext_resource type="Texture2D" uid="uid://c48rw7dukpgbq" path="res://resources/graphics/icons/coin.png" id="6_g5nkg"]
 
 [node name="gacha_master" type="Control"]
@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_n2buy")
 
 [node name="Gacha" type="Sprite2D" parent="."]
@@ -28,6 +29,7 @@ offset_left = 2.0
 offset_top = -1.0
 offset_right = 42.0
 offset_bottom = 39.0
+mouse_filter = 1
 script = ExtResource("3_qx7fi")
 metadata/_edit_vertical_guides_ = [290.0]
 
@@ -53,14 +55,16 @@ offset_right = 63.0
 offset_bottom = 44.0
 text = "dia"
 
-[node name="gacha" parent="upper_ui_gacha" instance=ExtResource("5_cowh7")]
-unique_name_in_owner = true
-position = Vector2(220, 98)
-scale = Vector2(0.9, 0.9)
-
 [node name="Coin" type="Sprite2D" parent="upper_ui_gacha"]
 position = Vector2(18, 30)
 texture = ExtResource("6_g5nkg")
 
+[node name="control gacha" parent="upper_ui_gacha" instance=ExtResource("6_66kpv")]
+offset_left = 161.0
+offset_top = 22.0
+offset_right = 281.0
+offset_bottom = 192.0
+scale = Vector2(0.9, 0.9)
+
 [connection signal="spin_gacha_signal" from="upper_ui_gacha" to="." method="_on_upper_ui_gacha_spin_gacha_signal"]
-[connection signal="got_new_frog" from="upper_ui_gacha/gacha" to="upper_ui_gacha" method="_on_gacha_got_new_frog"]
+[connection signal="gacha_got_new_frog" from="upper_ui_gacha/control gacha" to="upper_ui_gacha" method="_on_control_gacha_gacha_got_new_frog"]

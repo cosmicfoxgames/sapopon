@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://baihgicbqykr5" path="res://resources/graphics/gacha/BOLAS.PNG" id="2_cgk8g"]
 [ext_resource type="Texture2D" uid="uid://ck2g60qy0eoe5" path="res://resources/graphics/gacha/GACHALAVANCA.PNG" id="4_7yyqh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rntc"]
+size = Vector2(119, 170)
+
 [sub_resource type="Animation" id="Animation_ft78n"]
 length = 0.001
 tracks/0/type = "value"
@@ -273,10 +276,10 @@ _data = {
 "no_money": SubResource("Animation_rit8f")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rntc"]
-size = Vector2(119, 170)
-
-[node name="gacha" type="Node2D"]
+[node name="gacha" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_n7kdm")
 
 [node name="all_gacha" type="Node2D" parent="."]
@@ -296,15 +299,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 pivot_offset = Vector2(34, 6)
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Gachalavanca" type="Sprite2D" parent="all_gacha/Control"]
 texture = ExtResource("4_7yyqh")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_gokhi")
-}
 
 [node name="Area2D" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -312,6 +311,12 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-10.5, 0)
 shape = SubResource("RectangleShape2D_0rntc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_gokhi")
+}
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
