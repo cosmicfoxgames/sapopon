@@ -6,7 +6,7 @@ enum FROG_COLECTIONS {LUCKY, HARD, STYLISH, ADVENTURE, MYSTIC, MATERIALS}
 enum MARKET_FLUCTUATIONS {NEGATIVE, NEUTRAL, POSITIVE}
 enum FLUCTUATION_RATE {XTRA_BAD, BAD, GOOD, XTRA_GOOD}
 
-enum SCENES {GACHA_ROOM, MAIN_MENU, MARKET, COLLECTION, DESKTOP, INTRO, INBETWEEN_CARD}
+enum SCENES {GACHA_ROOM, MAIN_MENU, MARKET, COLLECTION, DESKTOP, INTRO, INBETWEEN_CARD, CREDITS}
 
 enum MOUSE_POINTERS {POINTER, HAND}
 
@@ -19,7 +19,8 @@ const scene_paths = [
 	"res://scenes/collection_master.tscn",
 	"res://scenes/desktop_master.tscn",
 	"res://scenes/intro_master.tscn",
-	"res://scenes/inbetween_master.tscn"
+	"res://scenes/inbetween_master.tscn",
+	"res://scenes/credits_master.tscn"
 ]
 
 const FROG_TEMPLATE_PATH = "res://resources/frog_resources/%s.tres"

@@ -87,3 +87,5 @@ horizontal_alignment = 2
 
 [connection signal="button_click" from="VBoxContainer/butt_log_in" to="." method="_on_butt_log_in_button_click"]
 [connection signal="button_click" from="VBoxContainer/butt_log_out" to="." method="_on_butt_log_out_button_click"]
+[connection signal="button_click" from="VBoxContainer2/icon_txt_button" to="." method="_on_icon_txt_button_button_click"]
+[connection signal="button_click" from="VBoxContainer2/icon_txt_button2" to="." method="_on_icon_txt_button_2_button_click"]

@@ -20,3 +20,11 @@ func _on_butt_log_in_button_click() -> void:
 	GlobalSignals.fade_scene.emit(load(GameData.scene_paths[GameData.SCENES.DESKTOP]))
 func _on_butt_log_out_button_click() -> void:
 	get_tree().quit()
+
+#credits button
+func _on_icon_txt_button_button_click(button: Variant) -> void:
+	GlobalSignals.fade_scene.emit(load(GameData.scene_paths[GameData.SCENES.CREDITS]))
+
+#manual button
+func _on_icon_txt_button_2_button_click(button: Variant) -> void:
+	pass # Replace with function body.
