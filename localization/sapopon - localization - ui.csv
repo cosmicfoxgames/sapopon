@@ -13,8 +13,8 @@ back,Voltar,Back
 next_day,Próx. Dia,Next Day
 day,Dia %s,Day %s
 gacha,Sapopon,Sapopon
-objective_msg,Vamos tentar chegar a um milhão dessa vez!,Let's try to get to a million this time!
-lose_msg,O seu dinheiro está perigosamente baixo!,You're money is dangerously low!
+objective_msg,Vamos tentar chegar a 100 mil dessa vez!,Let's try to reach 100 thousand this time!
+lose_msg,O seu dinheiro está perigosamente baixo!,Your money is dangerously low!
 your_coins,Você tem %s moedas,You have %s coins
 got_new_frog,Você conseguiu um novo sapo!,You've got a new frog!
 not_enough_money,Você não tem moedas o suficiente pra isso!,You don't have enough coins to do that!
@@ -28,6 +28,6 @@ market,Mercado,Market
 today_fluctuation,Cotações de hoje,Today's rates
 your_collection,Sua coleção de Sapopon,Your Sapopon collection
 to_sell,Sapopon à venda,Sapopon to sell
-can_sell_less_zero,Você não pode vender por menos de 0 moedas!,You can't sell at less than 0 coins!
+can_sell_less_zero,Você não pode vender por menos de 0 moedas!,You can't sell for less than 0 coins!
 sell,Vender,Sell
 frog,Sapo,Frog

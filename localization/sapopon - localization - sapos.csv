@@ -34,12 +34,13 @@ frog_abstract,Sapo Abstrato,Abstract Frog
 frog_pipa_l,Sapo Pipa,Surinam Toad
 frog_png,sapo.png,frog.png
 frog_icecream,Sapo Sorveteiro,Parlour Frog
+frog_coins,Bolsinha de Sapo,Frog Coin Purse
 ,,
 materials_steel_frog,Sapo de Aço,Steel Frog
 materials_alexandrite_frog,Sapo de Alexandrita,Alexandrite Frog
 materials_antimatter_frog,Sapo de Antimatéria,Antimatter Frog
 materials_apatite_frog,Sapo de Apatita,Apatite Frog
-materials_slate_frog,Sapo de Ardósia,Slate Frog
+materials_slate_frog,Sapo de Ardósia,Deep Slate Frog
 materials_meat_frog,Sapo de Carne,Meat Frog
 materials_chalcedony_frog,Sapo de Calcedonia,Chalcedony Frog
 materials_aventurine_frog,Sapo de Aventurina,Aventurine Frog
@@ -63,4 +64,4 @@ materials_rhodochrosite_frog,Sapo de Rodocrosita,Rhodochrosite Frog
 materials_sodalite_frog,Sapo de Sodalita,Sodalite Frog
 materials_topaz_frog,Sapo de Topázio,Topaz Frog
 materials_tungsten_frog,Sapo de Tungstênio,Tungsten Frog
-materials_uranium_frog,Sapo de Urânio,Enriched Uranium
+materials_uranium_frog,Sapo de Urânio,Uranium Frog
