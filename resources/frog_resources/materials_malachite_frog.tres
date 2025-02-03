@@ -6,4 +6,4 @@
 script = ExtResource("1_irlyv")
 id = "materials_malachite_frog"
 colection = 5
-frog_rarity = 1
+frog_rarity = 2

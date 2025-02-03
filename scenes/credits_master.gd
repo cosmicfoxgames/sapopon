@@ -8,23 +8,27 @@ const CREDITS = [
 	+ "\nA GAME MADE by VILLAIN ERA" \
 	+ "\n\nSapopon: Non-Fungible Toads",
 	"Powered by Godot" \
-	+ "\nMade under 48(ish) hours for the Global Game Jam 2025",
+	+ "\n\nOriginally made under 48(ish) hours for the Global Game Jam 2025",
 	"DIRECTION" \
-	+ "\nLussie Vriska Luciferina" \
+	+ "\n\nLussie Vriska Luciferina" \
 	+ "\nThomas Lion Tournoys",
 	"PROGRAMMING & GAME DESIGN" \
-	+ "\nIkras Faria Beraldo" \
+	+ "\n\nIkras Faria Beraldo" \
 	+ "\nMercúrio Loures de Oliveira" \
 	+ "\nThomas Lion Tournoys",
 	"ART" \
-	+ "\nIkras Faria Beraldo" \
-	+ "\nKauany Gomes Cardoso" \
+	+ "\n\nIkras Faria Beraldo" \
+	+ "\nLussie Vriska Luciferina" \
+	+ "\nThomas Lion Tournoys" \
+	+ "\nYves Bicudo",
+	"FROGS" \
+	+ "\n\nKauany Gomes Cardoso" \
 	+ "\nLussie Vriska Luciferina" \
 	+ "\nPolariz27" \
 	+ "\nThomas Lion Tournoys" \
 	+ "\nYves Bicudo",
 	"MUSIC & SFX" \
-	+ "\nOli Campos" \
+	+ "\n\nOli Campos" \
 	+ "\nPolariz27",
 	"Thanks for playing the game!",
 	"Exist, Resist, Persist!"
@@ -50,4 +54,5 @@ func show_credits():
 	
 	await get_tree().create_timer((WAIT_TIME / 2)).timeout
 	
+	GlobalSignals.stop_music.emit()
 	GlobalSignals.change_scene.emit(load(GameData.scene_paths[GameData.SCENES.INTRO]))

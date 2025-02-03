@@ -6,4 +6,4 @@
 script = ExtResource("1_ej1df")
 id = "materials_feldspar_frog"
 colection = 5
-frog_rarity = 0
+frog_rarity = 1

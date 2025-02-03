@@ -42,14 +42,16 @@ const FROG_LIST = [
 
 const GAME_WARNINGS = {
 	"NOT_ENOUGH_COINS" : "not_enough_money",
-	"CANT_SELL_LESS_ZERO" : "can_sell_less_zero"
+	"CANT_SELL_LESS_ZERO" : "can_sell_less_zero",
+	"GOAL_TIP" : "objective_msg",
+	"LOSE_TIPE" : "lose_msg",
 }
 
 const DEFAUT_START_PLAYER_MONEY = 10
 
 #win loose condition based on how much money you have
 const LOOSE_CONDITION = -100
-const WIN_CONDITION = 1000000
+const WIN_CONDITION = 100000
 
 var is_firt_time = true
 var already_won_game = false
@@ -157,11 +159,11 @@ func get_frog_influenced_value(frog : FrogTemplate):
 		#coleção é uma super influencia
 		if PlayerData.today_market_fluctuation[2].has(GameData.FROG_COLECTIONS.keys()[frog.colection]):
 			print("sapo é super flutuação negativa")
-			valor = frog.get_value() * -2
+			valor = frog.get_value() * -8
 		#coleção não é uma super influencia
 		else:
 			print("sapo é flutuação negativa")
-			valor = frog.get_value() * -1
+			valor = frog.get_value() * -2
 	
 	#coleção não tá nas flutuações de hj
 	else:
@@ -177,7 +179,7 @@ func start_fresh_game():
 	PlayerData.currnt_day = 1
 	PlayerData.current_collection = []
 	
-	is_firt_time = false
+	#is_firt_time = false
 	already_won_game = false
 	Save.save_game()
 

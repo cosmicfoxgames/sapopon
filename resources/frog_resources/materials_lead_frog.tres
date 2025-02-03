@@ -6,4 +6,4 @@
 script = ExtResource("1_h45av")
 id = "materials_lead_frog"
 colection = 5
-frog_rarity = 0
+frog_rarity = 1

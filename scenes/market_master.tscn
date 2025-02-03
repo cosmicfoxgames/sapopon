@@ -40,9 +40,9 @@ metadata/_edit_vertical_guides_ = [118.0]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 5.0
-offset_top = 55.0
+offset_top = 50.0
 offset_right = 112.0
-offset_bottom = 70.0
+offset_bottom = 65.0
 theme = ExtResource("4_evrr8")
 theme_override_font_sizes/font_size = 10
 text = "today_fluctuation"
@@ -103,10 +103,10 @@ text = "to_sell"
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 7.0
-offset_top = 70.0
+offset_top = 61.0
 offset_right = 111.0
 offset_bottom = 179.0
-theme_override_constants/separation = 17
+theme_override_constants/separation = 20
 
 [node name="game_button" parent="upper_ui_market" instance=ExtResource("6_6vxdy")]
 offset_left = 235.0

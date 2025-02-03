@@ -6,4 +6,4 @@
 script = ExtResource("1_tkdft")
 id = "materials_sodalite_frog"
 colection = 5
-frog_rarity = 1
+frog_rarity = 2

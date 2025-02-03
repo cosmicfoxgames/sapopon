@@ -6,4 +6,4 @@
 script = ExtResource("1_xymro")
 id = "materials_slate_frog"
 colection = 5
-frog_rarity = 0
+frog_rarity = 1

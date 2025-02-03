@@ -6,4 +6,4 @@
 script = ExtResource("1_eckyw")
 id = "materials_meat_frog"
 colection = 5
-frog_rarity = 0
+frog_rarity = 3

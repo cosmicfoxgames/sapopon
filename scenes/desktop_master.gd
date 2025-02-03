@@ -9,6 +9,7 @@ extends Control
 func _ready() -> void:
 	on_first_start_game()
 	connect_all_signals()
+	play_boot_up_warning()
 	
 	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["BOOTUP"]))
 
@@ -54,6 +55,14 @@ func advance_day():
 	
 	GlobalSignals.fade_scene.emit(load(GameData.scene_paths[GameData.SCENES.INBETWEEN_CARD]))
 
+func play_boot_up_warning():
+	GameData.get_collection_value()
+	
+	if GameData.is_firt_time == true:
+		GlobalSignals.show_warning.emit(GameData.GAME_WARNINGS["GOAL_TIP"])
+	if (PlayerData.current_money + PlayerData.current_collection_value) <= -50:
+		GlobalSignals.show_warning.emit(GameData.GAME_WARNINGS["LOSE_TIPE"])
+
 #signals
 
 func _on_button_gacha_clicked(which: Variant) -> void:
@@ -71,9 +80,11 @@ func _on_get_new_frog(frog : FrogTemplate):
 
 #next day button
 func _on_game_button_button_click() -> void:
+	if GameData.is_firt_time == true: GameData.is_firt_time = false
 	advance_day()
 
 #back to main menu button
 func _on_game_button_2_button_click() -> void:
+	if GameData.is_firt_time == true: GameData.is_firt_time = false
 	Save.save_game()
 	GlobalSignals.fade_scene.emit(load(GameData.scene_paths[GameData.SCENES.MAIN_MENU]))
