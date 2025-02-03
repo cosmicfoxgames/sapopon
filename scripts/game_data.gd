@@ -179,7 +179,7 @@ func start_fresh_game():
 	PlayerData.currnt_day = 1
 	PlayerData.current_collection = []
 	
-	#is_firt_time = false
+	is_firt_time = true
 	already_won_game = false
 	Save.save_game()
 
