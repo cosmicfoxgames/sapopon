@@ -1,5 +1,5 @@
 key,pt,en
-frog_angel,Sapanjo,Frangel
+frog_angel,Sapanjo,Frog Angel
 frog_demon,Sapánas,Frog Satan
 frog_future,Rãndroid,Toadroid
 frog_medieval,Sapo Bocudo,Mouthy Frog
@@ -8,10 +8,10 @@ frog_cheese,Sapão de Queijo,Cheese Toadst
 frog_jfrog,sapo.jpeg,frog.jpeg
 frog_chad,Chaderson,Chaderfilho
 frog_hfroger,HFROGGER,HFROGGER
-frog_gnome,Sapo de Jardim,Frome
+frog_gnome,Sapo de Jardim,Gnome Toad
 frog_autism,Rãutismo,Frogtism
 frog_paradox,Sapo Paradoxo,Paradox Frog
-frog_tan,Sapo Banhista,Tan Line Frog
+frog_tan,Sapo Bronzeado,Tan Line Frog
 frog_ladybug,Saponinha,Ladyfrog
 frog_low_poly,Sapo Lowpoly,Lowpoly Frog
 frog_sapone,Al Sapone,Al Sapone
@@ -20,7 +20,7 @@ frog_vga,Sapo VGA,VGA Frog
 frog_french,Sapoleão Bonaparte,Napoleon Bonafrog
 frog_war,Sapo Guerreiro,Battletoad
 frog_rogue,Sapo Ladino,Frogue
-frog_alien,Extra terrestre,Extra terrestrial
+frog_alien,Sapalien,Frogalien
 frog_space,Saponauta,Astrotoad
 frog_primitive,Neandersapiens,Neandertoad
 frog_mage,Sapo Mago,Mage Frog
@@ -32,6 +32,35 @@ frog_grof,SapoopaS,FroggorF
 frog_anime,Kawaii Kero,Kawaii Kero
 frog_abstract,Sapo Abstrato,Abstract Frog
 frog_pipa_l,Sapo Pipa,Surinam Toad
-frog_pipa_f,Sapo Pipa Furado,Surinam Toad
 frog_png,sapo.png,frog.png
 frog_icecream,Sapo Sorveteiro,Parlour Frog
+,,
+materials_steel_frog,Sapo de Aço,Steel Frog
+materials_alexandrite_frog,Sapo de Alexandrita,Alexandrite Frog
+materials_antimatter_frog,Sapo de Antimatéria,Antimatter Frog
+materials_apatite_frog,Sapo de Apatita,Apatite Frog
+materials_slate_frog,Sapo de Ardósia,Slate Frog
+materials_meat_frog,Sapo de Carne,Meat Frog
+materials_chalcedony_frog,Sapo de Calcedonia,Chalcedony Frog
+materials_aventurine_frog,Sapo de Aventurina,Aventurine Frog
+materials_lead_frog,Sapo de Chumbo,Lead Frog
+materials_cement_frog,Sapo de Cimento,Cement Frog
+materials_glass_frog,Sapo de Vidro,Glass Frog
+materials_chrysoberyl_frog,Sapo de Crisoberilo,Chrysoberyl Frog
+materials_chrysoprase_frog,Sapo de Crisoprásio,Chrysoprase Frog
+materials_manure_frog,Sapo de Estrume,Manure Frog
+materials_feldspar_frog,Sapo de Feldspato,Feldspar Frog
+materials_cast_iron_frog,Sapo de Ferro Fundido,Cast Iron Frog
+materials_pig_iron_frog,Sapo de Ferro-Gusa,Pig Iron Frog
+materials_fluorite_frog,Sapo de Fluorita,Fluorite Frog
+materials_malachite_frog,Sapo de Malaquita,Malachite Frog
+materials_pearl_frog,Sapo de Madrepérola,Pearl Frog
+materials_molybdenum_frog,Sapo de Molibdênio,Molybdenum Frog
+materials_pvc_frog,Sapo de PVC,PVC Frog
+materials_ruby_frog,Sapo de Rubi,Ruby Frog
+materials_sapphire_frog,Sapo de Safira,Sapphire Frog
+materials_rhodochrosite_frog,Sapo de Rodocrosita,Rhodochrosite Frog
+materials_sodalite_frog,Sapo de Sodalita,Sodalite Frog
+materials_topaz_frog,Sapo de Topázio,Topaz Frog
+materials_tungsten_frog,Sapo de Tungstênio,Tungsten Frog
+materials_uranium_frog,Sapo de Urânio,Enriched Uranium

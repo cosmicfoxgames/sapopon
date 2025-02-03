@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FrogTemplate" load_steps=2 format=3 uid="uid://bm6b1ct43wuv1"]
+
+[ext_resource type="Script" path="res://scripts/frog_template.gd" id="1_8sdhq"]
+
+[resource]
+script = ExtResource("1_8sdhq")
+id = "materials_rhodochrosite_frog"
+colection = 5
+frog_rarity = 1

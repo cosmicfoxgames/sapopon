@@ -24,7 +24,21 @@ const scene_paths = [
 ]
 
 const FROG_TEMPLATE_PATH = "res://resources/frog_resources/%s.tres"
-const FROG_LIST = ["frog_angel", "frog_demon", "frog_future", "frog_medieval", "frog_pieta", "frog_cheese", "frog_jfrog", "frog_chad", "frog_hfroger", "frog_gnome", "frog_autism", "frog_paradox", "frog_tan", "frog_ladybug", "frog_low_poly", "frog_sapone", "frog_lips", "frog_vga", "frog_french", "frog_war", "frog_rogue", "frog_alien", "frog_space", "frog_primitive", "frog_mage", "frog_greek", "frog_atom", "frog_sound", "frog_bread", "frog_grof", "frog_anime", "frog_abstract", "frog_pipa_l"]
+const FROG_LIST = [
+	"frog_angel", "frog_demon", "frog_future", "frog_medieval", "frog_pieta", "frog_cheese", "frog_jfrog",
+	"frog_chad", "frog_hfroger", "frog_gnome", "frog_autism", "frog_paradox", "frog_tan", "frog_ladybug",
+	"frog_low_poly", "frog_sapone", "frog_lips", "frog_vga", "frog_french", "frog_war", "frog_rogue",
+	"frog_alien", "frog_space", "frog_primitive", "frog_mage", "frog_greek", "frog_atom", "frog_sound",
+	"frog_bread", "frog_grof", "frog_anime", "frog_abstract", "frog_pipa_l", "materials_steel_frog",
+	"materials_alexandrite_frog", "materials_antimatter_frog", "materials_apatite_frog",
+	"materials_slate_frog", "materials_meat_frog", "materials_chalcedony_frog", "materials_aventurine_frog",
+	"materials_lead_frog", "materials_cement_frog", "materials_glass_frog", "materials_chrysoberyl_frog",
+	"materials_chrysoprase_frog", "materials_manure_frog", "materials_feldspar_frog", "materials_cast_iron_frog",
+	"materials_pig_iron_frog", "materials_fluorite_frog", "materials_malachite_frog",
+	"materials_pearl_frog", "materials_molybdenum_frog", "materials_pvc_frog", "materials_ruby_frog",
+	"materials_sapphire_frog", "materials_rhodochrosite_frog", "materials_sodalite_frog", "materials_topaz_frog",
+	"materials_tungsten_frog", "materials_uranium_frog"
+]
 
 const GAME_WARNINGS = {
 	"NOT_ENOUGH_COINS" : "not_enough_money",

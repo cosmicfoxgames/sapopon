@@ -1,8 +1,9 @@
 keys,pt,en
 lang_name,Português,English
-game_name,Sapopon,Sapopon: Non-fungible Toads
+game_name,Sapopon,Sapopon: Non-Fungible Toads
 frogos,FrogOs,FrogOs
 press_enter,Pressione ENTER para começar,Press ENTER to start
+touch_screen,Toque na tela para começar,Touch screen to start
 log_in,Entrar,Log in
 shot_down,Desligar,Shut Down
 log_out,Sair,Log out
@@ -12,6 +13,8 @@ back,Voltar,Back
 next_day,Próx. Dia,Next Day
 day,Dia %s,Day %s
 gacha,Sapopon,Sapopon
+objective_msg,Vamos tentar chegar a um milhão dessa vez!,Let's try to get to a million this time!
+lose_msg,O seu dinheiro está perigosamente baixo!,You're money is dangerously low!
 your_coins,Você tem %s moedas,You have %s coins
 got_new_frog,Você conseguiu um novo sapo!,You've got a new frog!
 not_enough_money,Você não tem moedas o suficiente pra isso!,You don't have enough coins to do that!
@@ -23,8 +26,8 @@ frog_rarity,RARIDADE,RARITY
 frog_today_value,PREÇO HOJE,PRICE TODAY
 market,Mercado,Market
 today_fluctuation,Cotações de hoje,Today's rates
-your_collection,Sua coleção de Sapopons,Your Sapopon collection
-to_sell,À venda,Sapopons to sell
+your_collection,Sua coleção de Sapopon,Your Sapopon collection
+to_sell,Sapopon à venda,Sapopon to sell
 can_sell_less_zero,Você não pode vender por menos de 0 moedas!,You can't sell at less than 0 coins!
 sell,Vender,Sell
 frog,Sapo,Frog

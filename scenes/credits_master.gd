@@ -6,21 +6,22 @@ extends Control
 const CREDITS = [
 	"COSMIC FOX GAMES PRESENTS" \
 	+ "\nA GAME MADE by VILLAIN ERA" \
-	+ "\n\nSapopon: Non-fungible Toads",
+	+ "\n\nSapopon: Non-Fungible Toads",
 	"Powered by Godot" \
 	+ "\nMade under 48(ish) hours for the Global Game Jam 2025",
 	"DIRECTION" \
-	+ "\nThomas Lion Tournoys" \
-	+ "\nVriska Luciferina",
+	+ "\nLussie Vriska Luciferina" \
+	+ "\nThomas Lion Tournoys",
 	"PROGRAMMING & GAME DESIGN" \
 	+ "\nIkras Faria Beraldo" \
-	+ "\nMercúrio Lourdes de Oliverira" \
+	+ "\nMercúrio Loures de Oliveira" \
 	+ "\nThomas Lion Tournoys",
 	"ART" \
+	+ "\nIkras Faria Beraldo" \
 	+ "\nKauany Gomes Cardoso" \
+	+ "\nLussie Vriska Luciferina" \
 	+ "\nPolariz27" \
 	+ "\nThomas Lion Tournoys" \
-	+ "\nVriska Luciferina" \
 	+ "\nYves Bicudo",
 	"MUSIC & SFX" \
 	+ "\nOli Campos" \

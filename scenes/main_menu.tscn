@@ -65,6 +65,7 @@ icon_to_use = ExtResource("5_s3gpp")
 button_txt = "credits"
 
 [node name="icon_txt_button2" parent="VBoxContainer2" instance=ExtResource("4_6wvss")]
+visible = false
 layout_mode = 2
 icon_to_use = ExtResource("6_rwo16")
 button_txt = "manual"

@@ -14,11 +14,12 @@ config/name="Sapopon: Non-Fungible Toads"
 config/name_localized={
 "pt": "Sapopon"
 }
+config/version="0.2"
 run/main_scene="res://scenes/game_master.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://resources/graphics/windows/full black.png"
-config/icon="res://icon.svg"
+config/icon="res://resources/graphics/logo/frog.png"
 
 [autoload]
 
