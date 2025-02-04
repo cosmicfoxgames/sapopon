@@ -38,6 +38,7 @@ func get_gacha():
 func no_money():
 	print("NO MONEY")
 	anim.play("no_money")
+	GlobalSignals.play_sfx.emit(GameResources.get_resource(GameResources.SFX["ERROR"]))
 	GlobalSignals.show_warning.emit(GameData.GAME_WARNINGS["NOT_ENOUGH_COINS"])
 
 func mouse_out_helper():

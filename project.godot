@@ -35,6 +35,7 @@ ButtonActions="*res://scripts/button_actions.gd"
 
 window/size/viewport_width=352
 window/size/viewport_height=198
+window/size/mode=3
 window/size/window_width_override=864
 window/size/window_height_override=486
 window/stretch/mode="canvas_items"
@@ -62,7 +63,10 @@ locale/translation_remaps={
 "res://resources/graphics/intro/CUTSCENE1.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT1.PNG:pt"),
 "res://resources/graphics/intro/CUTSCENE2.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT2.PNG:pt"),
 "res://resources/graphics/intro/CUTSCENE3.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT3.PNG:pt"),
-"res://resources/graphics/intro/CUTSCENE4.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT4.PNG:pt")
+"res://resources/graphics/intro/CUTSCENE4.PNG": PackedStringArray("res://localization/resources to localize/pt/CUTPT4.PNG:pt"),
+"res://resources/graphics/intro/xtra cards/card_badending.png": PackedStringArray("res://localization/resources to localize/pt/card_badending_pt.png:pt"),
+"res://resources/graphics/intro/xtra cards/card_goodending.png": PackedStringArray("res://localization/resources to localize/pt/card_goodenfing_pt.png:pt"),
+"res://resources/graphics/intro/xtra cards/card_thenextday.png": PackedStringArray("res://localization/resources to localize/pt/card_thenextday_pt.png:pt")
 }
 locale/translations=PackedStringArray("res://localization/sapopon - localization - propriedades.en.translation", "res://localization/sapopon - localization - propriedades.pt.translation", "res://localization/sapopon - localization - sapos.en.translation", "res://localization/sapopon - localization - sapos.pt.translation", "res://localization/sapopon - localization - ui.en.translation", "res://localization/sapopon - localization - ui.pt.translation")
 

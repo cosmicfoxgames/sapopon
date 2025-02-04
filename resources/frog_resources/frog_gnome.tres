@@ -6,4 +6,4 @@
 script = ExtResource("1_mrg5l")
 id = "frog_gnome"
 colection = 1
-frog_rarity = 1
+frog_rarity = 0

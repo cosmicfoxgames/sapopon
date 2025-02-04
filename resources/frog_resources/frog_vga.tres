@@ -6,4 +6,4 @@
 script = ExtResource("1_ean4u")
 id = "frog_vga"
 colection = 2
-frog_rarity = 2
+frog_rarity = 1

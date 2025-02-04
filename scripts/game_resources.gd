@@ -19,7 +19,10 @@ const SFX = {
 	"FROG_SELL" : "res://resources/sfx/frogsell.mp3",
 	"IMPACT" : "res://resources/sfx/undertaleimpact.mp3",
 	"DAMP_CLICK" : "res://resources/sfx/waterclick.mp3",
-	"BUBBLE_CLICK" : "res://resources/sfx/bubbleclick3.mp3"
+	"BUBBLE_CLICK" : "res://resources/sfx/click2.mp3", #"res://resources/sfx/bubbleclick3.mp3",
+	"NEXT_DAY" : "res://resources/sfx/dayskip.mp3",
+	"ERROR" : "res://resources/sfx/error.mp3",
+	"ON_A_LOSS" : "res://resources/sfx/loss.mp3"
 }
 
 const FROG_SFX = [

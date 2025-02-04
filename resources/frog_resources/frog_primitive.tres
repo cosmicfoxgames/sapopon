@@ -6,4 +6,4 @@
 script = ExtResource("1_two1o")
 id = "frog_primitive"
 colection = 3
-frog_rarity = 2
+frog_rarity = 1

@@ -37,7 +37,8 @@ const FROG_LIST = [
 	"materials_pig_iron_frog", "materials_fluorite_frog", "materials_malachite_frog",
 	"materials_pearl_frog", "materials_molybdenum_frog", "materials_pvc_frog", "materials_ruby_frog",
 	"materials_sapphire_frog", "materials_rhodochrosite_frog", "materials_sodalite_frog", "materials_topaz_frog",
-	"materials_tungsten_frog", "materials_uranium_frog"
+	"materials_tungsten_frog", "materials_uranium_frog",
+	"frog_icecream", "frog_coins", "frog_png", "frog_joker", "frog_sata"
 ]
 
 const GAME_WARNINGS = {
